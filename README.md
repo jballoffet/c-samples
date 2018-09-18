@@ -1,2 +1,2 @@
-# learning-c
-C Tutorial: From Zero to Hero
+# Aprendiendo C
+Tutorial de C: "De C-ro a héroe!"
