@@ -1,0 +1,48 @@
+Contenidos:
+1. Introducción a C
+2. Variables y Tipos
+3. Operadores
+4. Estructuras de Control - Decisión
+5. Estructuras de Control - Repetición
+6. Funciones - Argumentos por valor
+7. Funciones - Archivos Header
+8. Punteros
+9. Funciones - Argumentos por referencia
+10. Arreglos
+11. Arreglos Multidimensionales
+12. Memoria dinámica (parte 1)
+13. Strings
+14. Argumentos del main
+15. Recursividad
+16. Ordenamiento
+17. Instrucciones del Pre-procesador y Typedef (#include, #define, typedef, enum, #ifdef, #ifndef, #endif)
+18. Punteros a función
+19. Estructuras
+20. Memoria dinámica (parte 2)
+21. Estructuras Autorreferenciadas
+22. Colas
+23. Pilas
+24. Listas Simplemente Enlazadas
+25. Listas Doblemente Enlazadas
+26. Listas Circulares
+27. Bibliotecas (estaticas, shared, dinamicas)
+28. Archivos de texto
+29. Archivos binarios
+30. Archivos utilizando systemcalls
+31. Procesos - IPC (fork, pipe, named_pipe o FIFO)
+32. Sockets (servidor, cliente, tcp, udp)
+33. GUI
+34. Imagenes
+35. Audio
+
+Herramientas:
+1. Linux
+2. GCC
+3. Make
+4. Doxygen
+5. Git
+6. IDE
+
+Varios:
+1. Coding Standard y Buenos Habitos de Programacion
+
