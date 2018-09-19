@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     }
 
     // 2. Abro el archivo origen en modo lectura (r)
-    fpInput = fopen("archivo.txt", "r");
+    fpInput = fopen(argv[1], "r");
 
     // 3. Chequeo si hubo un error al abrir el archivo
     if (fpInput == NULL) {
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
     }
 
     // 4. Abro el archivo destino en modo escritura (w)
-    fpOutput = fopen("archivo_copia.txt", "w");
+    fpOutput = fopen(argv[2], "w");
 
     // 5. Chequeo si hubo un error al abrir el archivo
     if (fpOutput == NULL) {
