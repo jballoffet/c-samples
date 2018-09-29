@@ -1,6 +1,6 @@
 /**
  * \file            main.c
- * \brief           28. Archivos de Texto - Ejemplo 4
+ * \brief           28. Archivos de Texto - Ejemplo 4 - Leyendo un número de un archivo de texto
  * \author          Javier Balloffet
  * \date            18-SEP-2018
  * \details         Usar makefile para compilar, linkear y ejecutar

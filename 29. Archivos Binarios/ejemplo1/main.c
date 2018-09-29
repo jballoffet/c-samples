@@ -1,8 +1,8 @@
 /**
  * \file            main.c
- * \brief           28. Archivos de Texto - Ejemplo 3 - Escribiendo un número en un archivo de texto
+ * \brief           29. Archivos Binarios - Ejemplo 1 - Escribir un archivo binario
  * \author          Javier Balloffet
- * \date            18-SEP-2018
+ * \date            28-SEP-2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
@@ -10,10 +10,10 @@
 
 int main() {
     FILE* fp;
-    int number = 123456789;
+    int array[5] = {1, 2, 3, 4, 5};
 	
-    // 1. Abro el archivo en modo escritura (w). Si no existe, el mismo es creado
-    fp = fopen("archivo.txt", "w");
+    // 1. Abro el archivo en modo escritura binaria (wb). Si no existe, el mismo es creado
+    fp = fopen("archivo", "wb");
 
     // 2. Chequeo si hubo un error al abrir el archivo
     if (fp == NULL) {
@@ -21,8 +21,8 @@ int main() {
         return -1;
     }
 
-    // 3. Escribo un numero en el archivo
-    fprintf(fp, "%d\n", number);
+    // 3. Escribo el archivo (de a bloques de bytes)
+    fwrite(array, sizeof(int), 5, fp);
 
     // 4. Cierro el archivo
     fclose(fp);
