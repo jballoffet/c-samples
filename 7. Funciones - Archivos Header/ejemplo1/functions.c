@@ -10,7 +10,7 @@
 
 // Definicion de la funcion "add"
 int add(int a, int b) {
-    // Recibo "a" y "b" como parámetros de la función
+    // Recibo "a" y "b" como parámetros de la función y retorno el contenido de "result"
     int result;
     result = a + b;
     return result;

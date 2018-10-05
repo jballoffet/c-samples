@@ -18,7 +18,7 @@ int main() {
     printf("Ingrese otro numero: ");
     scanf("%d", &number2);
 
-    // 2. Invoco a la función "add", pasándole "number1" y "number2" como argumentos
+    // 2. Invoco a la función "add", pasándole "number1" y "number2" como argumentos. Almaceno el valor que retorna la función en la variable "sum"
     sum = add(number1, number2);
 
     // 3. Imprimo en pantalla el resultado de la suma
