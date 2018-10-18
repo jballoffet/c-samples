@@ -45,4 +45,4 @@ Herramientas:
 
 Varios:
 1. Coding Standard y Buenos Habitos de Programacion
-
+2. Linkeo con librerias (math, -lm)
