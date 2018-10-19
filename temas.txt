@@ -15,7 +15,7 @@ Contenidos:
 14. Argumentos del main
 15. Recursividad
 16. Ordenamiento
-17. Instrucciones del Pre-procesador y Typedef (#include, #define, typedef, enum, #ifdef, #ifndef, #endif)
+17. Instrucciones (directivas) del Pre-procesador y Typedef (#include, #define, typedef, enum, #ifdef, #ifndef, #endif)
 18. Punteros a función
 19. Estructuras
 20. Memoria dinámica (parte 2)
@@ -29,11 +29,18 @@ Contenidos:
 28. Archivos de texto
 29. Archivos binarios
 30. Archivos utilizando systemcalls
-31. Procesos - IPC (fork, pipe, named_pipe o FIFO)
-32. Sockets (servidor, cliente, tcp, udp)
-33. GUI
-34. Imagenes
-35. Audio
+31. Procesos
+32. IPC - Pipes
+33. IPC - Named Pipes o FIFO
+34. IPC - Señales
+35. Sockets (servidor, cliente, tcp, udp)
+36. GUI
+37. Imagenes
+38. Audio
+39. Threads
+40. IPC - Semaforos
+41. IPC - Cola de Mensajes
+42. IPC - Shared Memory
 
 Herramientas:
 1. Linux
@@ -41,8 +48,28 @@ Herramientas:
 3. Make
 4. Doxygen
 5. Git
-6. IDE
+6. GitLab
+7. GitKraken
+8. IDE
+9. Debug (gdb)
 
 Varios:
 1. Coding Standard y Buenos Habitos de Programacion
 2. Linkeo con librerias (math, -lm)
+3. Librerias estándar de C
+4. Flujo estándar (STDIN, STDOUT, STDERR)
+5. Conectar salidas con entradas con |
+6. Uso de perror()
+7. Árboles de decisión
+8. Generacion de números aleatorios
+9. time()
+10. Contar tiempo que demora en ejecutar
+
+Tools:
+1. Parser CSV.
+2. Parser INI.
+3. List, Tail and Stack Manager.
+4. Sockets Manager.
+5. Memory Leak Tools: Valgrind.
+6. Raspberry Pi. Systemd service.
+7. SQLite
