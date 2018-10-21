@@ -15,13 +15,13 @@
 int main() {
     // 1. Declaro un entero para almacenar el PID (Process ID)
     int pid;
-    // 2. Declaro un arreglo de dos enteros para almacenar el descriptor del pipe (tubería)
-    int fd[2];
+    // 2. Declaro un arreglo de dos enteros para almacenar el descriptor del pipe (tubería), donde pipefd[0] es el extremo de lectura y pipefd[1] es el extremo de escritura
+    int pipefd[2];
     // 3. Declaro un arreglo de caracteres para almacenar el mensaje a enviar por el pipe
     char msg[25];
 
     // 4. Creo el pipe y verifico que no devuelva error
-    if (pipe(fd) == -1) {
+    if (pipe(pipefd) == -1) {
         perror("Error al crear el pipe\n");
         exit(1);
     }
@@ -35,18 +35,32 @@ int main() {
         exit(2);        
 
     } else if (pid == 0) {
-        // 7. Proceso hijo. Escucha por el pipe hasta que llegue un mensaje (bloqueante)
+        // 7. Proceso hijo
+        // 8. Cierro el extremo de escritura (que el hijo no usa)
+        close(pipefd[1]);
+
+        // 9. Escucha por el pipe hasta que llegue un mensaje (bloqueante)
         printf("Hijo: Hola!\n");
-        read(fd[0], msg, 22);
+        read(pipefd[0], msg, 22);
         printf("Hijo: Mi padre dijo \"%s\"\n", msg);
+
+        // 10. Cierra el extremo de lectura
+        close(pipefd[0]);
         printf("Hijo: Chau!\n");
 
     } else if (pid > 0) {
-        // 8. Proceso padre. Escribe en el pipe.
-        printf("Padre: Hola!\n");
-        write(fd[1], "Luke, yo soy tu padre", 22);
+        // 11. Proceso padre
+        // 12. Cierro el extremo de lectura (que el padre no usa)
+        close(pipefd[0]);
 
-        // 9. Hago que el padre espere a que su hijo muera antes de morir él
+        // 13. Escribe en el pipe.
+        printf("Padre: Hola!\n");
+        write(pipefd[1], "Luke, yo soy tu padre", 22);
+
+        // 14. Cierra el extremo de escritura
+        close(pipefd[1]);
+
+        // 15. Hago que el padre espere a que su hijo muera antes de morir él
         printf("Padre: Esperando a que mi hijo muera...\n");
         wait(NULL);
         printf("Padre: Chau!\n");
