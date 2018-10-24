@@ -34,9 +34,9 @@ Contenidos:
 33. IPC - Named Pipes o FIFO
 34. IPC - Señales
 35. Sockets (servidor, cliente, tcp, udp)
-36. GUI
-37. Imagenes
-38. Audio
+36. GUI (opencv, gtk, ncurses)
+37. Imagenes (opencv)
+38. Audio (alsa)
 39. Threads
 40. IPC - Semaforos
 41. IPC - Cola de Mensajes
