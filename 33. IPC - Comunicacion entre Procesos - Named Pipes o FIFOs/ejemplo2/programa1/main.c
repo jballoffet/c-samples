@@ -1,8 +1,8 @@
 /**
  * \file            main.c
- * \brief           33. IPC - Comunicacion entre Procesos - Named Pipes o FIFOs - Ejemplo 1 - Programa 2 - Named Pipe entre dos programas
+ * \brief           33. IPC - Comunicacion entre Procesos - Named Pipes o FIFOs - Ejemplo 2 - Programa 1 - Chat entre dos programas
  * \author          Javier Balloffet
- * \date            23-OCT-2018
+ * \date            28-OCT-2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
@@ -24,26 +24,27 @@ int main() {
     // 4. Creo el archivo FIFO
     mkfifo(myfifo, 0666);
     
-    while (1) {
-        // 5. Abre la FIFO como sólo lectura
+    while (strncmp(msg, "exit", 4)) {
+        // 5. Abre la FIFO como sólo escritura
+        fd = open(myfifo, O_WRONLY);
+
+        // 6. Toma un mensaje a enviar por consola
+        printf("Escriba el mensaje a enviar por la FIFO o \"exit\" para salir: ");
+        fgets(msg, sizeof(msg), stdin);
+
+        // 7. Escribe el mensaje a enviar en la FIFO y cierra la FIFO
+        write(fd, msg, strlen(msg) + 1);
+        close(fd);
+
+        // 8. Abre la FIFO como sólo lectura
         fd = open(myfifo, O_RDONLY);
 
-        // 6. Lee la FIFO hasta que llega un mensaje y cierra la FIFO
+        // 9. Lee la FIFO hasta que llega un mensaje y cierra la FIFO
         read(fd, msg, sizeof(msg));
         close(fd);
 
-        // 7. Imprime el mensaje recibido por pantalla
-        printf("User1: %s\n", msg);
-
-        // 8. Abre la FIFO como sólo escritura
-        fd = open(myfifo, O_WRONLY);
-
-        // 9. Toma un mensaje a enviar por consola
-        fgets(msg, sizeof(msg), stdin);
-
-        // 10. Escribe el mensaje a enviar en la FIFO y cierra la FIFO
-        write(fd, msg, strlen(msg) + 1);
-        close(fd);
+        // 10. Imprime el mensaje recibido por pantalla
+        printf("Mensaje del User2: %s", msg);
     }
 
     return 0;
