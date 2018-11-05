@@ -41,6 +41,7 @@ Contenidos:
 40. IPC - Semaforos
 41. IPC - Cola de Mensajes
 42. IPC - Shared Memory
+43. Puertos
 
 Herramientas:
 1. Linux
@@ -73,3 +74,4 @@ Tools:
 5. Memory Leak Tools: Valgrind.
 6. Raspberry Pi. Systemd service.
 7. SQLite
+8. Hash and Password Verify.
