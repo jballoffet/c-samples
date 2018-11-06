@@ -15,7 +15,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 
-#define CONECTIONS_MAX 5    // El número máximo de conexiones en cola de espera permitidas
+#define CONNECTIONS_MAX 5    // El número máximo de conexiones en cola de espera permitidas
 #define BUFFER_MAX 100      // Tamaño del buffer de datos en bytes
 
 int main(int argc, char* argv[]) {
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
     }
 
     // 10. Escucho con el socket usando listen()
-    status = listen(listenSocketFd, CONECTIONS_MAX);
+    status = listen(listenSocketFd, CONNECTIONS_MAX);
     if (status == -1) {
         printf("Error en listen()\n");
         return -1;
