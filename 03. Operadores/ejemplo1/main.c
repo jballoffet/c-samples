@@ -1,52 +1,55 @@
 /**
  * \file            main.c
- * \brief           3. Operadores Aritmeticos y Logicos - Ejemplo 1 - Operadores Aritmeticos
+ * \brief           03. Operadores - Ejemplo 1 - Operadores Aritmeticos
  * \author          Javier Balloffet
  * \date            09-SEP-2018
- * \details         Usar makefile para compilar, linkear y ejecutar
+ * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
 
 int main() {
-    // 1. Declaracion de variables
-    int operando1 = 9, operando2 = 6, resultadoEntero;
-    float resultadoReal;
+    /* 1. Declaracion de variables */
+    int a = 9, b = 6, c;
+    float d;
 
-    // 2. Muestro el valor de las variables en pantalla
-    printf("operando1 = %d\n", operando1);
-    printf("operando2 = %d\n", operando2);
+    /* 2. Muestro el valor de las variables en pantalla */
+    printf("Operadores:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
 
-    // 3. Realizo varias operaciones aritmeticas e imprimo el resultado en pantalla
-    // 3.1. Suma (+)
-    resultadoEntero = operando1 + operando2;
-    printf("operando1 + operando2 = %d\n", resultadoEntero);
+    /* 3. Realizo varias operaciones aritmeticas e imprimo el resultado en pantalla */
+    printf("Operaciones aritmeticas:\n");
+
+    /* 3.1. Suma (+) */
+    c = a + b;
+    printf("a + b = %d\n", c);
     
-    // 3.2. Resta (-)
-    resultadoEntero = operando1 - operando2;
-    printf("operando1 - operando2 = %d\n", resultadoEntero);
+    /* 3.2. Resta (-) */
+    c = a - b;
+    printf("a - b = %d\n", c);
 
-    // 3.3. Multiplicacion (*)
-    resultadoEntero = operando1 * operando2;
-    printf("operando1 * operando2 = %d\n", resultadoEntero);
+    /* 3.3. Multiplicacion (*) */
+    c = a * b;
+    printf("a * b = %d\n", c);
 
-    // 3.4. Division (/)
-    resultadoEntero = operando1 / operando2;
-    printf("operando1 / operando2 = %d\n", resultadoEntero);
+    /* 3.4. Division (/) */
+    c = a / b;
+    printf("a / b = %d\n", c);
 
-    // 3.5. Resto (%) - Nota: Sólo puede usarse con variables enteras!  
-    resultadoEntero = operando1 % operando2;
-    printf("El resto resultante de la division de operando1 sobre operando2 = %d\n", resultadoEntero);
+    /* 3.5. Resto (%) - Nota: Sólo puede usarse con variables enteras! */
+    c = a % b;
+    printf("Resto de a / b = %d\n", c);
 
-    /* 4. ¿Y si quiero el resultado como un numero real? Debo castear! 
+    /* 4. ¿Y si quiero el resultado como un numero decimal? Debo castear! 
           Nota: Castear antes de realizar la operacion! */
     // 4.1. Asi no!
-    resultadoReal = (float) (operando1 / operando2);
-    printf("El resultado real (erroneo) de la division es: %f\n", resultadoReal);
+    d = (float) (a / b);
+    printf("El resultado decimal (erroneo) de la division es: %f\n", d);
     
     // 4.2. Asi si!
-    resultadoReal = ((float) operando1) / operando2;
-    printf("El resultado real (correcto) de la division es: %f\n", resultadoReal);
+    d = ((float) a) / b;
+    printf("El resultado real (correcto) de la division es: %f\n", d);
 
-	return 0;
+    return 0;
 }

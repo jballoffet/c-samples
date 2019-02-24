@@ -65,6 +65,9 @@ Varios:
 8. Generacion de números aleatorios
 9. time()
 10. Contar tiempo que demora en ejecutar
+11. Correr programas en segundo plano (&)
+12. Uso de ps, kill para procesos
+13. Enviar entrada a un programa con <
 
 Tools:
 1. Parser CSV.
@@ -75,3 +78,12 @@ Tools:
 6. Raspberry Pi. Systemd service.
 7. SQLite
 8. Hash and Password Verify.
+9. Puerto Serial (USB).
+10. Placa de Audio.
+11. Video Player.
+12. Systemd.
+13. Raspberry Pi (GPIO, UART, SPI, I2C).
+14. NanoDB.
+15. Metodos Numericos sobre arrays.
+16. BMP Manager
+17. WAV Manager

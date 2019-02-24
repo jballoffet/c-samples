@@ -1,6 +1,6 @@
 /**
  * \file            functions.h
- * \brief           7. Funciones - Archivos Header - Ejemplo 2 - Funciones estáticas
+ * \brief           07. Funciones - Archivos Header - Ejemplo 2 - Funciones estáticas
  * \author          Javier Balloffet
  * \date            04-OCT-2018
  * \details         Usar makefile para compilar, linkear y ejecutar

@@ -1,9 +1,9 @@
 /**
  * \file            main.c
- * \brief           4. Estructuras de Control - Decisión - Ejemplo 7 - Estructura "switch...case" (2)
+ * \brief           04. Estructuras de Control - Decisión - Ejemplo 7 - Estructura "switch...case" (2)
  * \author          Javier Balloffet
  * \date            30-SEP-2018
- * \details         Usar makefile para compilar, linkear y ejecutar
+ * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
@@ -11,13 +11,13 @@
 int main() {
     char option;
 	
-    // 1. Solicito una opcion por consola
+    /* 1. Solicito una opcion por consola */
     printf("Ingrese la opcion deseada:\n");
     printf("a) Opcion 1\n");
     printf("b) Opcion 2\n");
     scanf("%c", &option);
 
-    // 2. Informo por pantalla la opcion elegida
+    /* 2. Informo por pantalla la opcion elegida */
     switch (option) {
         case 'a':
             printf("Usted eligio la opcion 1\n");
