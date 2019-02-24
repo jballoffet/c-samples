@@ -8,9 +8,9 @@
 
 #include "functions.h"
 
-/* Definicion de la funcion "add" */
+/* 1. Definicion de la funcion "add" */
 int add(int a, int b) {
-    /* Recibo "a" y "b" como parámetros de la función y retorno el contenido de "result" */
+    /* 2. Recibo "a" y "b" como parámetros de la función y retorno el contenido de "result" */
     int result;
     result = a + b;
     return result;

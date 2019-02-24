@@ -9,14 +9,17 @@
 #include <stdio.h>
 
 int main() {
-    // 1. Declaro un arreglo (array) de caracteres (char) de 5 posiciones
+    /* 1. Declaro un arreglo (array) de caracteres (char) de 5 posiciones */
     char array[5];
     int i;
 
-    // 2. Imprimo las direcciones de cada posición del arreglo
+    /* 2. Imprimo las direcciones de memoria de cada posición del arreglo */
     for (i = 0; i < 5; i++) {
         printf("Direccion de array[%d] = %p\n", i, &array[i]);
     }
+
+    /* 3. Imprimo el contenido de array */
+    printf("Contenido de array = %p\n", array);
 
 	return 0;
 }

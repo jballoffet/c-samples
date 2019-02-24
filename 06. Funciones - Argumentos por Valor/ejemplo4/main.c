@@ -1,6 +1,6 @@
 /**
  * \file            main.c
- * \brief           06. Funciones - Argumentos por Valor - Ejemplo 4 - Variables globales
+ * \brief           06. Funciones - Argumentos por Valor - Ejemplo 4 - Variables globales (al archivo)
  * \author          Javier Balloffet
  * \date            04-OCT-2018
  * \details         Ver README para compilar, linkear y ejecutar
@@ -8,22 +8,23 @@
 
 #include <stdio.h>
 
-/* 1. Declaro la variable "number" como global */
-int number = 1;
+/* 1. Declaro la variable "number" como global (al archivo main.c) */
+static int number = 1;
 
-void display();
+void increment();
 
 int main() {
-    /* 2. Invoco a "display" y luego incremento "number" y muestro su valor */
-    display();
-    number++;
-    printf("Valor de \"number\" en la función main = %d\n", number); 
+    /* 2. Invoco a "increment" y muestro el valor de "number" antes y después de llamar a la función */
+    printf("Valor de \"number\" en main() antes de incrementar = %d\n", number); 
+    increment();
+    printf("Valor de \"number\" en main() despues de incrementar = %d\n", number);
 
 	return 0;
 }
 
-void display() {
-    /* 3. Incremento "number" y muestro su valor */
+void increment() {
+    /* 3. Muestro el valor de "number" antes y después de incrementar */
+    printf("Valor de \"number\" en increment() antes de incrementar = %d\n", number);
     number++;
-    printf("Valor de \"number\" en la función display = %d\n", number);
+    printf("Valor de \"number\" en increment() despues de incrementar = %d\n", number); 
 }

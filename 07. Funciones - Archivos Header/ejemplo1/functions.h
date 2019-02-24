@@ -9,7 +9,7 @@
 #ifndef FUNCTIONS_H_
 #define FUNCTIONS_H_
 
-/* Declaración de la función "add". También se le conoce como "prototipo" */
+/* 1. Declaración de la función "add". También se le conoce como "prototipo" */
 int add(int a, int b);
 
 #endif /* FUNCTIONS_H_ */

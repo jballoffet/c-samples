@@ -9,17 +9,17 @@
 #include <stdio.h>
 
 int main() {
-    // 1. Declaro un arreglo (array) de enteros (int) de 5 posiciones
+    /* 1. Declaro un arreglo (array) de enteros (int) de 5 posiciones */
     int array[5];
     int i;
 
-    // 2. Cargo el arreglo
+    /* 2. Cargo el arreglo */
     for (i = 0; i < 5; i++) {
         printf("Ingrese un numero: ");
         scanf("%d", &array[i]);
     }
 
-    // 3. Imprimo el contenido del arreglo
+    /* 3. Imprimo el contenido del arreglo */
     for (i = 0; i < 5; i++) {
         printf("Valor de array[%d] = %d\n", i, array[i]);
     }

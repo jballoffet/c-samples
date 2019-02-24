@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include "functions.h"
 
-/* Declaración o prototipo de la funcion estática "display" */
+/* 1. Declaración o prototipo de la funcion estática "display" */
 static void display(int a);
 
 int add(int a, int b) {
@@ -19,8 +19,8 @@ int add(int a, int b) {
     return result;
 }
 
-/* Definición de la funcion estática "display" */
+/* 2. Definición de la funcion estática "display" */
 static void display(int a) {
-    /* Recibo "a" como parámetro de la función */
+    /* 3. Recibo "a" como parámetro de la función */
     printf("[Display] = %d\n", a);
 }

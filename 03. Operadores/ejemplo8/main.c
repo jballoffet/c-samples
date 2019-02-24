@@ -16,10 +16,10 @@ int main() {
     char d;
 
     /* 2. Realizo la operación sizeof() */
-    printf("Tamaño de variable entera (int) = %ld bytes\n", sizeof(a));
-    printf("Tamaño de variable decimal (float) = %ld bytes\n", sizeof(b));
-    printf("Tamaño de variable decimal de doble precision (double) = %ld bytes\n", sizeof(c));
-    printf("Tamaño de variable caracter (char) = %ld byte\n", sizeof(d));
+    printf("Tamanio de variable entera (int) = %ld bytes\n", sizeof(a));
+    printf("Tamanio de variable decimal (float) = %ld bytes\n", sizeof(b));
+    printf("Tamanio de variable decimal de doble precision (double) = %ld bytes\n", sizeof(c));
+    printf("Tamanio de variable caracter (char) = %ld byte\n", sizeof(d));
 
 	return 0;
 }
