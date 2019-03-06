@@ -1,6 +1,6 @@
 Contenidos:
 1. Introducción a C
-2. Variables y Tipos
+2. Variables y Tipos de Datos
 3. Operadores
 4. Estructuras de Control - Decisión
 5. Estructuras de Control - Repetición
