@@ -9,6 +9,8 @@
 #include <stdio.h>
 
 int main() {
+    int i;
+
     /* 1. Declaro un string (array) de caracteres (char) de varias maneras diferentes */
     char name1[7] = "Javier";
     char name2[] = "Javier";
@@ -32,6 +34,12 @@ int main() {
     printf("Tamanio de name2 (en cantidad de caracteres) = %ld\n", sizeof(name2) / sizeof(char));
     printf("Tamanio de name3 (en cantidad de caracteres) = %ld\n", sizeof(name3) / sizeof(char));
     printf("Tamanio de name4 (en cantidad de caracteres) = %ld\n", sizeof(name4) / sizeof(char));
+
+    /* 5. Imprimo un string caracter a caracter */
+    for (i = 0; i < 7; i++) {
+        printf("Contenido de name1[%d] = %c\n", i, name1[i]);
+        printf("Contenido de name1[%d] (codigo ascii decimal) = %d\n", i, name1[i]);
+    }
 
 	return 0;
 }
