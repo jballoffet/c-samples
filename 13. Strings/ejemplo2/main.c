@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           13. Strings - Ejemplo 2 - Uso de scanf() con strings
  * \author          Javier Balloffet
- * \date            06-MAR-2019
+ * \date            Mar 6, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           13. Strings - Ejemplo 5 - Uso de strlen()
  * \author          Javier Balloffet
- * \date            06-MAR-2019
+ * \date            Mar 6, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

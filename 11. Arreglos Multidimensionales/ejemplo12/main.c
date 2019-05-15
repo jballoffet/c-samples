@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           11. Arreglos Multidimensionales - Ejemplo 12 - Arrays de N dimensiones
  * \author          Javier Balloffet
- * \date            05-MAR-2019
+ * \date            Mar 5, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

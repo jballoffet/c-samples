@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           06. Funciones - Argumentos por Valor - Ejemplo 2 - Scope o alcance de una variable
  * \author          Javier Balloffet
- * \date            02-OCT-2018
+ * \date            Oct 2, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

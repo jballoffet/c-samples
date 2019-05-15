@@ -1,8 +1,8 @@
 /**
  * \file            main.c
- * \brief           02. Variables y Tipos de Datos - Ejemplo 7
+ * \brief           02. Variables y Tipos de Datos - Ejemplo 7 - Tamaño de una variable
  * \author          Javier Balloffet
- * \date            07-SEP-2018
+ * \date            Sep 7, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

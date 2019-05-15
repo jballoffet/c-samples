@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           05. Estructuras de Control - Repetición - Ejemplo 1 - Estructura "for"
  * \author          Javier Balloffet
- * \date            30-SEP-2018
+ * \date            Sep 30, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

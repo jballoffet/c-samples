@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           12. Memoria Dinamica - Parte 1 - Ejemplo 1 - Uso de malloc() y free()
  * \author          Javier Balloffet
- * \date            28-FEB-2019
+ * \date            Feb 28, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

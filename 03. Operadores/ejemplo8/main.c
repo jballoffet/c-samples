@@ -2,14 +2,14 @@
  * \file            main.c
  * \brief           03. Operadores - Ejemplo 8 - Operador sizeof()
  * \author          Javier Balloffet
- * \date            10-SEP-2018
+ * \date            Sep 10, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
 
 int main() {
-    /* 1. Declaracion de variables */
+    /* 1. Declaración de variables */
     int a;
     float b;
     double c;

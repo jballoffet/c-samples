@@ -1,15 +1,15 @@
 /**
  * \file            main.c
- * \brief           02. Variables y Tipos de Datos - Ejemplo 4
+ * \brief           02. Variables y Tipos de Datos - Ejemplo 4 - Signo de una variable
  * \author          Javier Balloffet
- * \date            07-SEP-2018
+ * \date            Sep 7, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
 
 int main() {
-    /* 1. Declaro variables integer con diferentes modificadores de signo */
+    /* 1. Declaro variables enteras (int) con diferentes modificadores de signo */
     signed int myIntegerVariable1;
     unsigned int myIntegerVariable2;
 

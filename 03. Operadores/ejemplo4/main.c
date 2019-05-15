@@ -2,14 +2,14 @@
  * \file            main.c
  * \brief           03. Operadores - Ejemplo 4 - Operadores Relacionales
  * \author          Javier Balloffet
- * \date            10-SEP-2018
+ * \date            Sep 10, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
 
 int main() {
-    /* 1. Declaracion de variables */
+    /* 1. Declaración de variables */
     int a = 5, b = 5, c = 10;
 
     /* 2. Realizo varias operaciones relacionales. Nota: true = 1, false = 0. */

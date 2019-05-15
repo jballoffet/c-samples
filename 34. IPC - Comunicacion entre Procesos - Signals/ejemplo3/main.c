@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           34. IPC - Comunicacion entre Procesos - Signals - Ejemplo 3 - Trapper genérico
  * \author          Javier Balloffet
- * \date            28-OCT-2018
+ * \date            Oct 28, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
@@ -16,15 +16,15 @@ void signals_handler(int signalNumber);
 int main() {
     int i;
 
-    // 1. Asigno todas las señales al handler (menos SIGKILL y SIGSTOP que no pueden ser trapeadas ni ignoradas)
+    /* 1. Asigno todas las señales al handler (menos SIGKILL y SIGSTOP que no pueden ser trapeadas ni ignoradas) */
     for (i = 1; i <= 64; i++) {
         signal(i, signals_handler);
     }
 
-    // 2. Informo el PID del proceso para poder enviarle señales con "kill -n PID"
+    /* 2. Informo el PID del proceso para poder enviarle señales con "kill -n PID" */
     printf("PID del proceso: %d\n", getpid());
 
-    // 3. Espero hasta que llega una señal y salgo
+    /* 3. Espero hasta que llega una señal y salgo */
     printf("Esperando una señal...\n");
     pause();
 
@@ -33,7 +33,7 @@ int main() {
 }
 
 void signals_handler(int signalNumber) {
-    // 4. Vuelvo a setear el handler para la señal recibida (sino se asigna automaticamente al handler default)
+    /* 4. Vuelvo a setear el handler para la señal recibida (sino se asigna automaticamente al handler default) */
     printf("Recibida la señal %d!\n", signalNumber);
     signal(signalNumber, signals_handler);
 }

@@ -1,7 +1,7 @@
 #
 # Makefile ejemplo
-# Author: Javier F. Balloffet
-# Date: 11-MAY-2018
+# Author: Javier Balloffet
+# Date: May 11, 2018
 #
 
 AUTHOR="JavierBalloffet"

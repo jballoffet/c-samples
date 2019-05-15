@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           09. Funciones - Argumentos por Referencia - Ejemplo 2 - Swapear variables
  * \author          Javier Balloffet
- * \date            12-OCT-2018
+ * \date            Oct 12, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

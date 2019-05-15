@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           34. IPC - Comunicacion entre Procesos - Signals - Ejemplo 1 - Trapea la señal SIGINT (CTRL-C)
  * \author          Javier Balloffet
- * \date            28-OCT-2018
+ * \date            Oct 28, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
@@ -15,10 +15,10 @@ int sigintCounter = 0;
 void sigint_handler();
 
 int main() {
-    // 1. Defino los handlers de las señales
+    /* 1. Defino los handlers de las señales */
     signal(SIGINT, sigint_handler);
 
-    // 2. Trapeo la señal SIGINT (CTRL-C) hasta 5 veces
+    /* 2. Trapeo la señal SIGINT (CTRL-C) hasta 5 veces */
     printf("Pulsa varias veces CTRL-C!\n");
     while (sigintCounter < 5);
 
@@ -27,13 +27,13 @@ int main() {
 }
 
 void sigint_handler() {
-    // 3. Ignoro si llega una nueva SIGINT mientras estoy en el handler (tambien la ignora el default)
+    /* 3. Ignoro si llega una nueva SIGINT mientras estoy en el handler (tambien la ignora el default) */
     signal(SIGINT, SIG_IGN);
 
-    // 4. Incremento contador
+    /* 4. Incremento contador */
     printf("Recibi SIGINT. Presionaste CTRL-C!\n");
     sigintCounter++;
 
-    // 5. Vuelvo a setear el handler para SIGINT (sino se asigna automaticamente al handler default)
+    /* 5. Vuelvo a setear el handler para SIGINT (sino se asigna automaticamente al handler default) */
     signal(SIGINT, sigint_handler);
 }

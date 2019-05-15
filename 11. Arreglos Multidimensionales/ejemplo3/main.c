@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           11. Arreglos Multidimensionales - Ejemplo 3 - Declaración de arrays multidimensionales (3)
  * \author          Javier Balloffet
- * \date            24-FEB-2019
+ * \date            Feb 24, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

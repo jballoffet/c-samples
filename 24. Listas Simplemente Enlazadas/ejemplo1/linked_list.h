@@ -2,7 +2,7 @@
  * \file            linked_list.h
  * \brief           24. Listas Simplemente Enlazadas - Ejemplo 1 - Implementación sencilla de una lista simplemente enlazada
  * \author          Javier Balloffet
- * \date            16-MAR-2019
+ * \date            Mar 16, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
@@ -18,7 +18,8 @@ typedef enum {
     LL_SUCCESS = 0,
     LL_MEMORY_ERROR,
     LL_EMPTY_LIST,
-    LL_INVALID_INDEX
+    LL_INVALID_INDEX,
+    LL_INVALID_VALUE
 } LinkedListStatus;
 
 LinkedListStatus insert_head(LinkedListNode** linkedList, int value);

@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           10. Arreglos - Ejemplo 5 - Pasaje de un valor del array a una función
  * \author          Javier Balloffet
- * \date            17-OCT-2018
+ * \date            Oct 17, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

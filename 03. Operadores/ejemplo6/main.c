@@ -2,14 +2,14 @@
  * \file            main.c
  * \brief           03. Operadores - Ejemplo 6 - Operadores a Nivel de Bits
  * \author          Javier Balloffet
- * \date            10-SEP-2018
+ * \date            Sep 10, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
 
 int main() {
-    /* 1. Declaracion de variables */
+    /* 1. Declaración de variables */
     int a = 12, b = 25;
 
     /* 2. Realizo varias operaciones a nivel de bits. */

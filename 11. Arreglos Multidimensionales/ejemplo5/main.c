@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           11. Arreglos Multidimensionales - Ejemplo 5 - Pasaje de un valor del array multidimensional a una función
  * \author          Javier Balloffet
- * \date            26-FEB-2019
+ * \date            Feb 26, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

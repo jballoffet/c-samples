@@ -2,7 +2,7 @@
  * \file            linked_list.c
  * \brief           24. Listas Simplemente Enlazadas - Ejemplo 1 - Implementación sencilla de una lista simplemente enlazada
  * \author          Javier Balloffet
- * \date            16-MAR-2019
+ * \date            Mar 16, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
@@ -70,7 +70,49 @@ LinkedListStatus insert_tail(LinkedListNode** linkedList, int value) {
 }
 
 LinkedListStatus insert_at(LinkedListNode** linkedList, int value, int index) {
-    // TODO
+    /* 1. Declaro un puntero a LinkedListNode (LinkedListNode*) para almacenar la direccion de comienzo de la lista */
+    LinkedListNode* head = *linkedList;
+    /* 2. Declaro un puntero a LinkedListNode (LinkedListNode*) para almacenar la direccion del nuevo nodo */
+    LinkedListNode* new_node = NULL;
+    int i;
+
+    /* 3. Solicito memoria al SO equivalente a un nodo (LinkedListNode) */
+    new_node = (LinkedListNode*) malloc(sizeof(LinkedListNode));
+    if (new_node == NULL) {
+        printf("Error! Memoria no asignada.\n");
+        return LL_MEMORY_ERROR;
+    }
+
+    /* 4. Cargo el nuevo valor en el nodo. Asigno un valor nulo al puntero por ahora */
+    new_node->value = value;
+    new_node->next = NULL;
+
+    /* 5. Inserto el nuevo nodo en la posición requerida */
+    /* 6. Chequeo si la lista está vacía */
+    if (head == NULL) {
+        /* 7. ¡La lista está vacía! Agrego el nuevo nodo */
+        *linkedList = new_node;
+    } else {
+        /* 8. ¡La lista no está vacía! Recorro la lista hasta llegar al índice requerido */
+        if (index == 0) {
+            *linkedList = new_node;
+            new_node->next = head;
+        } else {
+            for (i = 0; i < (index - 1); i++) {
+                if (head->next == NULL) {
+                    printf("Error! Indice invalido.\n");
+                    return LL_INVALID_INDEX;
+                }
+                head = head->next;
+            }
+
+            /* 9. Inserto el nuevo nodo */
+            new_node->next = head->next;
+            head->next = new_node;
+        }
+    }
+
+    return LL_SUCCESS;
 }
 
 LinkedListStatus remove_head(LinkedListNode** linkedList, int* value) {
@@ -118,8 +160,12 @@ LinkedListStatus remove_tail(LinkedListNode** linkedList, int* value) {
     /* 6. Encontré el último nodo. Obtengo el valor almacenado en el nodo */
     *value = head->value;
 
-    /* 7. Modifico el campo next del anteúltimo nodo de la lista a un valor nulo */
-    previous->next = NULL;
+    /* 7. Modifico el campo next del anteúltimo nodo de la lista (o el comienzo de la lista) a un valor nulo */
+    if (previous != NULL) {
+        previous->next = NULL;
+    } else {
+        *linkedList = NULL;
+    }
 
     /* 8. Libero la memoria solicitada al SO para el nodo que se está removiendo */
     free(head);
@@ -128,11 +174,64 @@ LinkedListStatus remove_tail(LinkedListNode** linkedList, int* value) {
 }
 
 LinkedListStatus remove_at(LinkedListNode** linkedList, int* value, int index) {
-    // TODO
+    /* 1. Declaro un puntero a LinkedListNode (LinkedListNode*) para almacenar la direccion de comienzo de la lista */
+    LinkedListNode* head = *linkedList;
+    /* 2. Declaro un puntero a LinkedListNode (LinkedListNode*) para almacenar la direccion del anterior nodo de la lista */
+    LinkedListNode* previous = NULL;
+    int i;
+
+    /* 3. Chequeo si la lista está vacía */
+    if (head == NULL) {
+        printf("Error! La lista esta vacia.\n");
+        return LL_EMPTY_LIST;
+    }
+
+    /* 4. Recorro la lista hasta llegar al índice requerido */
+    for (i = 0; i < index; i++) {
+        if (head->next == NULL) {
+            printf("Error! Indice invalido.\n");
+            return LL_INVALID_INDEX;
+        }
+        previous = head;
+        head = head->next;
+    }
+
+    /* 5. Encontré el nodo. Obtengo el valor almacenado en el nodo */
+    *value = head->value;
+
+    /* 6. Modifico el campo next del nodo anterior de la lista al nodo siguiente */
+    previous->next = head->next;
+
+    /* 7. Libero la memoria solicitada al SO para el nodo que se está removiendo */
+    free(head);
+
+    return LL_SUCCESS;
 }
 
 LinkedListStatus search(LinkedListNode* linkedList, int value, int* index) {
-    // TODO
+    /* 1. Declaro un puntero a LinkedListNode (LinkedListNode*) para almacenar la direccion de comienzo de la lista */
+    LinkedListNode* head = linkedList;
+    int i = 0;
+
+    /* 2. Chequeo si la lista está vacía */
+    if (head == NULL) {
+        printf("Error! La lista esta vacia.\n");
+        return LL_EMPTY_LIST;
+    }
+
+    /* 3. Recorro la lista hasta encontrar el valor buscado */
+    while (head != NULL) {
+        if (head->value == value) {
+            printf("Valor hallado!\n");
+            *index = i;
+            return LL_SUCCESS;
+        }
+        head = head->next;
+        i++;
+    }
+
+    printf("Valor ausente!\n");
+    return LL_INVALID_VALUE;
 }
 
 LinkedListStatus peek(LinkedListNode* linkedList, int* value, int index) {

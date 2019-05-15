@@ -1,8 +1,8 @@
 /**
  * \file            main.c
- * \brief           04. Estructuras de Control - Decisión - Ejemplo 5 - Estructura "if...else" con condiciones multiples
+ * \brief           04. Estructuras de Control - Decisión - Ejemplo 5 - Estructura "if...else" con condiciones múltiples
  * \author          Javier Balloffet
- * \date            30-SEP-2018
+ * \date            Sep 30, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
@@ -17,7 +17,7 @@ int main() {
     printf("Ingrese otro numero: ");
     scanf("%d", &number2);
 
-    /* 2. Informo por pantalla si ambos numeros ingresados son negativos, positivos o cero */
+    /* 2. Informo por pantalla si ambos números ingresados son negativos, positivos o cero */
     if ((number1 > 0) && (number2 > 0)) {
         printf("Ambos numeros ingresados son positivos\n");
     } else if ((number1 < 0) && (number2 < 0)) {

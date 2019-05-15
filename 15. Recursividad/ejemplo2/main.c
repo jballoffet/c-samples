@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           15. Recursividad - Ejemplo 2 - Función factorial
  * \author          Javier Balloffet
- * \date            05-OCT-2018
+ * \date            Oct 5, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

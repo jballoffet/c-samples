@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           04. Estructuras de Control - Decisión - Ejemplo 4 - Estructura "if...else if"
  * \author          Javier Balloffet
- * \date            30-SEP-2018
+ * \date            Sep 30, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           04. Estructuras de Control - Decisión - Ejemplo 3 - Estructura "if...else" anidada
  * \author          Javier Balloffet
- * \date            29-SEP-2018
+ * \date            Sep 29, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

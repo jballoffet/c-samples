@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           09. Funciones - Argumentos por Referencia - Ejemplo 1 - Incrementar variable
  * \author          Javier Balloffet
- * \date            05-OCT-2018
+ * \date            Oct 5, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

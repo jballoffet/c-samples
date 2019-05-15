@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           23. Pilas - Ejemplo 1 - Implementación sencilla de una pila
  * \author          Javier Balloffet
- * \date            16-MAR-2019
+ * \date            Mar 16, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

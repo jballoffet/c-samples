@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           05. Estructuras de Control - Repetición - Ejemplo 6 - Sentencia "continue"
  * \author          Javier Balloffet
- * \date            02-OCT-2018
+ * \date            Oct 2, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

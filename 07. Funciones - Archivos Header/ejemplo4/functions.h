@@ -2,7 +2,7 @@
  * \file            functions.h
  * \brief           07. Funciones - Archivos Header - Ejemplo 4 - Variables globales (2)
  * \author          Javier Balloffet
- * \date            04-OCT-2018
+ * \date            Oct 4, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

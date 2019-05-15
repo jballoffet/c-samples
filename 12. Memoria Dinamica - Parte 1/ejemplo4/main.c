@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           12. Memoria Dinamica - Parte 1 - Ejemplo 4 - Uso de realloc()
  * \author          Javier Balloffet
- * \date            05-MAR-2019
+ * \date            Mar 5, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

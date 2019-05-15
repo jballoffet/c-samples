@@ -1,8 +1,8 @@
 /**
  * \file            main.c
- * \brief           02. Variables y Tipos de Datos - Ejemplo 5
+ * \brief           02. Variables y Tipos de Datos - Ejemplo 5 - Código ASCII
  * \author          Javier Balloffet
- * \date            07-SEP-2018
+ * \date            Sep 7, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

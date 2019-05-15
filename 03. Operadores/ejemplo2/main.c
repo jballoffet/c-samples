@@ -2,14 +2,14 @@
  * \file            main.c
  * \brief           03. Operadores - Ejemplo 2 - Operadores de Incremento y Decremento
  * \author          Javier Balloffet
- * \date            09-SEP-2018
+ * \date            Sep 9, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
 #include <stdio.h>
 
 int main() {
-    /* 1. Declaracion de variables */
+    /* 1. Declaración de variables */
     int a = 9;
     float b = 6.5;
 

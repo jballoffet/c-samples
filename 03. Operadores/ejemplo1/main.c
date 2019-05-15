@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           03. Operadores - Ejemplo 1 - Operadores Aritmeticos
  * \author          Javier Balloffet
- * \date            09-SEP-2018
+ * \date            Sep 9, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 
@@ -43,11 +43,11 @@ int main() {
 
     /* 4. ¿Y si quiero el resultado como un numero decimal? Debo castear! 
           Nota: Castear antes de realizar la operacion! */
-    // 4.1. Asi no!
+    /* 4.1. Asi no! */
     d = (float) (a / b);
     printf("El resultado decimal (erroneo) de la division es: %f\n", d);
     
-    // 4.2. Asi si!
+    /* 4.2. Asi si! */
     d = ((float) a) / b;
     printf("El resultado real (correcto) de la division es: %f\n", d);
 

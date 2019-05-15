@@ -2,7 +2,7 @@
  * \file            functions.c
  * \brief           07. Funciones - Archivos Header - Ejemplo 1 - Función definida por el usuario
  * \author          Javier Balloffet
- * \date            02-OCT-2018
+ * \date            Oct 2, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

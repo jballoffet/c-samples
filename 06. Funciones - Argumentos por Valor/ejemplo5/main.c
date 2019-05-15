@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           06. Funciones - Argumentos por Valor - Ejemplo 5 - Variables globales (al archivo) (2)
  * \author          Javier Balloffet
- * \date            04-OCT-2018
+ * \date            Oct 4, 2018
  * \details         Ver README para compilar, linkear y ejecutar
  */
 

@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           13. Strings - Ejemplo 1 - Declaración de strings
  * \author          Javier Balloffet
- * \date            05-MAR-2019
+ * \date            Mar 5, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

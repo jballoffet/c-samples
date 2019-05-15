@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           10. Arreglos - Ejemplo 9 - Pasaje de un array a una función (usando punteros)
  * \author          Javier Balloffet
- * \date            19-OCT-2018
+ * \date            Oct 19, 2018
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 

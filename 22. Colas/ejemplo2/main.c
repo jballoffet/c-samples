@@ -2,7 +2,7 @@
  * \file            main.c
  * \brief           22. Colas - Ejemplo 2 - Implementación sencilla de una cola (2)
  * \author          Javier Balloffet
- * \date            16-MAR-2019
+ * \date            Mar 16, 2019
  * \details         Usar makefile para compilar, linkear y ejecutar
  */
 
