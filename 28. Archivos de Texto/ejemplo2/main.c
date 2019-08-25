@@ -10,7 +10,7 @@
 
 int main() {
     FILE* fp;
-    char fileLine[60];
+    char file_line[60];
 	
     /* 1. Abro el archivo en modo lectura (r) */
     fp = fopen("archivo.txt", "r");
@@ -22,8 +22,8 @@ int main() {
     }
 
     /* 3. Leo e imprimo en pantalla la primera linea del archivo */
-    fgets(fileLine, 60, fp);
-    printf("%s", fileLine);
+    fgets(file_line, 60, fp);
+    printf("%s", file_line);
 
     /* 4. Cierro el archivo */
     fclose(fp);

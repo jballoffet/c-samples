@@ -9,41 +9,41 @@
 #include <stdio.h>
 
 int main() {
-    FILE* fpInput;
-    FILE* fpOutput;
+    FILE* fp_input;
+    FILE* fp_output;
     char character;
 
     /* 1. Abro el archivo origen en modo lectura (r) */
-    fpInput = fopen("archivo.txt", "r");
+    fp_input = fopen("archivo.txt", "r");
 
     /* 2. Chequeo si hubo un error al abrir el archivo */
-    if (fpInput == NULL) {
+    if (fp_input == NULL) {
         printf("Error abriendo el archivo origen!\n");
         return -1;
     }
 
     /* 3. Abro el archivo destino en modo escritura (w) */
-    fpOutput = fopen("archivo_copia.txt", "w");
+    fp_output = fopen("archivo_copia.txt", "w");
 
     /* 4. Chequeo si hubo un error al abrir el archivo */
-    if (fpOutput == NULL) {
+    if (fp_output == NULL) {
         printf("Error abriendo el archivo destino!\n");
         return -1;
     }
 
     /* 5. Leo el archivo origen caracter por caracter y lo voy escribiendo en el archivo destino */
-    character = fgetc(fpInput);
+    character = fgetc(fp_input);
 
-    while (feof(fpInput) == 0) {
-        fputc(character, fpOutput);
-        character = fgetc(fpInput);
+    while (feof(fp_input) == 0) {
+        fputc(character, fp_output);
+        character = fgetc(fp_input);
     }
 
     printf("Archivo copiado correctamente!\n");
 
     /* 6. Cierro los archivos */
-    fclose(fpInput);
-    fclose(fpOutput);
+    fclose(fp_input);
+    fclose(fp_output);
 
 	return 0;
 }
