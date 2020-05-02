@@ -1,5 +1,5 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 find -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
