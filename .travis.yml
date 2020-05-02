@@ -1,0 +1,18 @@
+# Travis configuration for Learning C
+# Author: Javier Balloffet <javier.balloffet@gmail.com>
+
+os: linux
+dist: bionic
+language: c
+compiler: gcc
+
+stages:
+  - build
+
+jobs:
+  include:
+    # Build application
+    - name: "build-app"
+      stage: build
+      script:
+        - bash ci/build_app.sh
