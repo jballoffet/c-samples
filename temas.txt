@@ -14,7 +14,7 @@ Contenidos:
 13. Strings
 14. Argumentos del main
 15. Recursividad
-16. Ordenamiento
+16. Algoritmos
 17. Instrucciones (directivas) del Pre-procesador y Typedef (#include, #define, typedef, enum, #ifdef, #ifndef, #endif)
 18. Punteros a función
 19. Estructuras
