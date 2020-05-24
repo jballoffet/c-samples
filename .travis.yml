@@ -14,6 +14,7 @@ addons:
     packages:
       - libopencv-dev
       - libgtk-3-dev
+      - libvlc-dev
 
 jobs:
   include:
