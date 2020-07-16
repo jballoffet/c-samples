@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.com/jballoffet/learning-c.svg?branch=master)](https://travis-ci.com/jballoffet/learning-c)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-# Learning C
+# C Samples
 
-This repository was created with the intention of acting as support material for the students of Introduction to CS at National Technological University.
+This repository acts as support material for the students of Introduction to CS at National Technological University.
 
 ## Getting Started
 
