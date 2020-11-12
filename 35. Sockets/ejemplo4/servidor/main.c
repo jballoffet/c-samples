@@ -24,11 +24,11 @@
 int clientsCount = 0;
 
 void sigchld_handler();
-void child_process(int clientSocketFd, struct sockaddr_in clientData);
+void child_process(int client_socket_fd, struct sockaddr_in client_data);
 
 int main(int argc, char* argv[]) {
-    int port, clientLength, pid, listenSocketFd, clientSocketFd;
-    struct sockaddr_in clientData;
+    int port, client_length, pid, listen_socket_fd, client_socket_fd;
+    struct sockaddr_in client_data;
 
     /* 1. Capturo la señal SIGCHLD, enviada cuando muere un proceso hijo */
     signal(SIGCHLD, sigchld_handler);
@@ -43,8 +43,8 @@ int main(int argc, char* argv[]) {
     }
 
     /* 3. Abro un socket tcp */
-    listenSocketFd = open_tcp_socket(port);
-    if (listenSocketFd == -1) {
+    listen_socket_fd = open_tcp_socket(port);
+    if (listen_socket_fd == -1) {
         printf("Error en open_tcp_socket()");
         return -1;
     }
@@ -54,9 +54,9 @@ int main(int argc, char* argv[]) {
 
     while (1) {
         /* 5. Acepto la conexión entrante */
-        clientLength = sizeof(struct sockaddr_in);
-        clientSocketFd = accept(listenSocketFd, (struct sockaddr*) &clientData, (socklen_t*) &clientLength);
-        if (clientSocketFd == -1) {
+        client_length = sizeof(struct sockaddr_in);
+        client_socket_fd = accept(listen_socket_fd, (struct sockaddr*) &client_data, (socklen_t*) &client_length);
+        if (client_socket_fd == -1) {
             printf("Error en accept()\n");
             continue;
         }
@@ -70,46 +70,46 @@ int main(int argc, char* argv[]) {
 
         } else if (pid == 0) {
             /* 8. Proceso hijo */
-            close(listenSocketFd);
-            child_process(clientSocketFd, clientData);
+            close(listen_socket_fd);
+            child_process(client_socket_fd, client_data);
             return 0;
 
         } else {
             /* 9. Proceso padre */
-            close(clientSocketFd);
+            close(client_socket_fd);
             clientsCount++;
             printf("Nuevo cliente! Total de clientes conectados: %d\n", clientsCount);
         }
     }
 
     /* 10. Cierra el socket de escucha */
-    close(listenSocketFd);
+    close(listen_socket_fd);
     printf("Servidor finalizado\n");
 
     return 0;
 }
 
-void child_process(int clientSocketFd, struct sockaddr_in clientData) {
-    int messageSize, clientOnline;
+void child_process(int client_socket_fd, struct sockaddr_in client_data) {
+    int message_size, clientOnline;
     char clientIp[IP_LENGTH];
     char buffer[BUFFER_MAX];
 
     /* 11. Muestra la IP del cliente */
-    strcpy(clientIp, inet_ntoa((struct in_addr) clientData.sin_addr));
+    strcpy(clientIp, inet_ntoa((struct in_addr) client_data.sin_addr));
     printf("Se obtuvo una conexion desde la IP: %s\n", clientIp);
 
     /* 12. Envía mensaje de bienvenida al cliente */
-    send(clientSocketFd, "Bienvenido! Conectado al servidor!", 34, 0);
+    send(client_socket_fd, "Bienvenido! Conectado al servidor!", 34, 0);
     clientOnline = 1;
 
     while (clientOnline) {
         /* 13. Recibe mensaje del cliente a imprimir en pantalla */
         printf("Esperando mensaje...\n");
-        messageSize = recv(clientSocketFd, buffer, BUFFER_MAX, 0);
+        message_size = recv(client_socket_fd, buffer, BUFFER_MAX, 0);
 
-        if (messageSize > 0) {
+        if (message_size > 0) {
             /* 14. Muestra mensaje recibido */
-            buffer[messageSize] = '\0';
+            buffer[message_size] = '\0';
             printf("Cliente [%s]: %s\n", clientIp, buffer);
         } else {
             clientOnline = 0;
@@ -117,7 +117,7 @@ void child_process(int clientSocketFd, struct sockaddr_in clientData) {
     }
 
     /* 15. Cierra el socket del cliente */
-    close(clientSocketFd);
+    close(client_socket_fd);
     printf("Conexion con cliente finalizada\n");
 }
 

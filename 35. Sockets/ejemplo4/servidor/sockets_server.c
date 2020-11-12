@@ -20,7 +20,7 @@
 
 int open_tcp_socket(int port) {
     int socketFd, status, enable;
-    struct sockaddr_in serverData;
+    struct sockaddr_in server_data;
 
     /* 1. Creo el socket, con configuración para IPv4 y TCP */
     socketFd = socket(AF_INET, SOCK_STREAM, 0);
@@ -30,17 +30,17 @@ int open_tcp_socket(int port) {
     }
 
     /* 2. Cargo información del servidor */
-    serverData.sin_family = AF_INET;
-    serverData.sin_addr.s_addr = INADDR_ANY;
-    serverData.sin_port = htons(port);
-    memset(&(serverData.sin_zero), 0, 8);
+    server_data.sin_family = AF_INET;
+    server_data.sin_addr.s_addr = INADDR_ANY;
+    server_data.sin_port = htons(port);
+    memset(&(server_data.sin_zero), 0, 8);
 
     /* 3. Agrego una opción al socket para evitar que el puerto quede bloqueado al cerrar el servidor */
     enable = 1;
     setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(enable));
 
     /* 4. Enlazo el socket a la configuracion deseada (IP:PORT) */
-    status = bind(socketFd, (struct sockaddr*) &serverData, sizeof(serverData));
+    status = bind(socketFd, (struct sockaddr*) &server_data, sizeof(server_data));
     if (status == -1) {
         printf("Error en bind()\n");
         return -1;
