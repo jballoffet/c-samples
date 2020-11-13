@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  35. Sockets - 01. Cliente-Servidor TCP
+ * @brief  35. Sockets - 03. Cliente-Servidor TCP
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Nov 11, 2020
  */
@@ -8,10 +8,17 @@
 #include <stdlib.h>
 #include "sockets.h"
 
+#define BUFFER_MAX 100  // Tamaño del buffer de datos en bytes.
 #define IP_LENGTH 16  // Cantidad de caracteres máxima de una dirección IPv4.
 
+typedef enum ClientStatus {
+    CONNECTED = 0,
+    DISCONNECTED
+} ClientStatus;
+
 int main(int argc, char* argv[]) {
-    int listen_socket_fd, client_socket_fd, message_size; 
+    int listen_socket_fd, client_socket_fd, message_size, client_status;
+    char buffer[BUFFER_MAX];
     char client_ip[IP_LENGTH];
 
     // Obtengo el número de puerto pasado como argumento del main.
@@ -39,6 +46,7 @@ int main(int argc, char* argv[]) {
         }
 
         // Muestro la IP del cliente.
+        client_status = CONNECTED;
         printf("Se obtuvo una conexion desde la IP: %s.\n", client_ip);
 
         // Envío mensaje de bienvenida al cliente.
@@ -46,6 +54,20 @@ int main(int argc, char* argv[]) {
         if (message_size < 0) {
             printf("Error enviando datos al cliente.\n");
             return -1; 
+        }
+
+        while (client_status == CONNECTED) {
+            // Recibo mensaje del cliente a imprimir en pantalla.
+            printf("Esperando mensaje...\n");
+            message_size = recibir_datos_tcp(client_socket_fd, buffer, BUFFER_MAX);
+
+            if (message_size > 0) {
+                // Muestro mensaje recibido.
+                buffer[message_size] = '\0';
+                printf("Cliente: %s\n", buffer);
+            } else {
+                client_status = DISCONNECTED;
+            }
         }
 
         // Cierro el socket del cliente.
