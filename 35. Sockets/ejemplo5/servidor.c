@@ -7,7 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <unistd.h>
+#include <signal.h>
 #include "sockets.h"
 
 #define BUFFER_MAX 100  // Tamaño del buffer de datos en bytes.
@@ -18,13 +20,15 @@ typedef enum ClientStatus {
     DISCONNECTED
 } ClientStatus;
 
-int clients_count = 0;
+// Variable global para llevar la cuenta de los clientes conectados.
+static int clients_count = 0;
 
 void sigchld_handler();
+void parent_process();
 void child_process(int client_socket_fd, const char* client_ip);
 
 int main(int argc, char* argv[]) {
-    int listen_socket_fd, client_socket_fd, client_status, pid;
+    int listen_socket_fd, client_socket_fd, pid;
     char client_ip[IP_LENGTH];
 
     // Capturo la señal SIGCHLD, enviada cuando muere un proceso hijo.
@@ -62,16 +66,13 @@ int main(int argc, char* argv[]) {
             return -1;
         } else if (pid == 0) {
             // Proceso hijo.
-            // Cierro socket de escucha.
             cerrar_socket_tcp(listen_socket_fd);
             child_process(client_socket_fd, client_ip);
             return 0;
         } else {
             // Proceso padre.
-            // Cierro socket de cliente.
             cerrar_socket_tcp(client_socket_fd);
-            clients_count++;
-            printf("Nuevo cliente! Total de clientes conectados: %d\n", clients_count);
+            parent_process();
         }
     }
 
@@ -82,10 +83,14 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
+void parent_process() {
+    clients_count++;
+    printf("Nuevo cliente! Total de clientes conectados: %d\n", clients_count);
+}
+
 void child_process(int client_socket_fd, const char* client_ip) {
     int message_size, client_status;
     char buffer[BUFFER_MAX];
-    char client_ip[IP_LENGTH];
 
     // Muestro la IP del cliente.
     client_status = CONNECTED;
@@ -118,8 +123,9 @@ void child_process(int client_socket_fd, const char* client_ip) {
 }
 
 void sigchld_handler() {
-    // "Sepulto" al hijo.
-    while (waitpid((pid_t)(-1), 0, WNOHANG) > 0);
-    clients_count--;
+    // "Sepulto" al hijo difunto.
+    while (waitpid((pid_t)(-1), 0, WNOHANG) > 0) {
+        clients_count--;
+    }
     printf("Cliente desconectado! Total de clientes conectados: %d\n", clients_count);
 }
