@@ -1,0 +1,11 @@
+---
+# Google C++ Style will be used in this project.
+# See https://google.github.io/styleguide/cppguide.html.
+BasedOnStyle: Google
+---
+Language: Cpp
+IndentWidth: 4
+DerivePointerAlignment: false
+PointerAlignment: Left
+BreakBeforeBraces: Allman
+...

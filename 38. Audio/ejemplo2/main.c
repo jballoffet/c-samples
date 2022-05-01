@@ -11,13 +11,19 @@
 #include <unistd.h>
 #include <vlc/vlc.h>
 
-int main(int argc, char* argv[]) {
-    libvlc_instance_t* instance;
-    libvlc_media_player_t* media_player;
-    libvlc_media_t* media;
+int main()
+{
+    libvlc_instance_t* instance = NULL;
+    libvlc_media_player_t* media_player = NULL;
+    libvlc_media_t* media = NULL;
 
     /* 1. Cargo el engine de VLC */
     instance = libvlc_new(0, NULL);
+    if (instance == NULL)
+    {
+        fprintf(stderr, "Error!");
+        return 1;
+    }
 
     /* 2. Creo un nuevo item */
     media = libvlc_media_new_path(instance, "sample.mp3");
