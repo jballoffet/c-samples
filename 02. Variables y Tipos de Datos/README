@@ -1,8 +1,0 @@
-Para compilar:
-gcc -c main.c -o main.o -Wall
-
-Para linkear:
-gcc main.o -o program -Wall
-
-Para ejecutar:
-./program

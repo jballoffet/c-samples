@@ -1,8 +1,0 @@
-Para compilar:
-gcc -c hola.c -o hola.o -Wall
-
-Para linkear:
-gcc hola.o -o hola -Wall
-
-Para ejecutar:
-./hola
