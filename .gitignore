@@ -36,6 +36,7 @@
 *.x86_64
 *.hex
 program
+app
 
 # Debug files
 *.dSYM/
