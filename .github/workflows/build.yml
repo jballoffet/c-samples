@@ -1,0 +1,18 @@
+name: C Samples CI
+
+on: pull_request
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ubuntu:20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build sample apps
+      working-directory: ci
+      run: ./build.sh
