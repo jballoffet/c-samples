@@ -21,3 +21,12 @@ pushd "03-Operadores/ejemplo05" && make && popd
 pushd "03-Operadores/ejemplo06" && make && popd
 pushd "03-Operadores/ejemplo07" && make && popd
 pushd "03-Operadores/ejemplo08" && make && popd
+
+pushd "04-Estructuras-de-Control-Decision/ejemplo01" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo02" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo03" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo04" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo05" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo06" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo07" && make && popd
+pushd "04-Estructuras-de-Control-Decision/ejemplo08" && make && popd
