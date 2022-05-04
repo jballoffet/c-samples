@@ -6,13 +6,15 @@
  */
 #include <stdio.h>
 
-int main() {
-  int i;
-	
-  // Repito el contenido dentro de la estructura 5 veces.
-  for (i = 0; i < 5; i++) {
-    printf("Mi primer bucle en C! (i = %d)\n", i);
-  }
+int main(void)
+{
+    int i;
 
-  return 0;
+    // Repito el contenido dentro de la estructura 5 veces.
+    for (i = 0; i < 5; i++)
+    {
+        printf("Mi primer bucle en C! (i = %d)\n", i);
+    }
+
+    return 0;
 }
