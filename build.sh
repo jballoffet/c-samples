@@ -8,3 +8,8 @@ find 03-Operadores -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" 
 find 04-Estructuras-de-Control-Decision -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 05-Estructuras-de-Control-Repeticion -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 06-Funciones-Argumentos-por-Valor -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 07-Funciones-Archivos-Header -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 08-Punteros -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 09-Funciones-Argumentos-por-Referencia -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 10-Arreglos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 11-Arreglos-Multidimensionales -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
