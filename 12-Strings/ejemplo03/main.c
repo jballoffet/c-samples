@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  12. Strings - 03. Uso de gets() y puts()
+ * @brief  12. Strings - 03. Uso de fgets() y puts()
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Mar 6, 2019
  */
@@ -13,7 +13,7 @@ int main(void)
 
     // Ingreso el contenido del string por consola.
     printf("Ingrese su nombre: ");
-    gets(name);
+    fgets(name, 25, stdin);
 
     // Imprimo el contenido del string.
     printf("Su nombre es: ");
