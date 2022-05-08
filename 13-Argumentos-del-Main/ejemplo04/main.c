@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  13. Argumentos del main - 04. Uso de getopt()
+ * @brief  13. Argumentos del Main - 04. Uso de getopt()
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   May 16, 2019
  */

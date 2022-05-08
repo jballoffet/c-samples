@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  13. Argumentos del main - 03. Declaración de main con argumentos
+ * @brief  13. Argumentos del Main - 03. Declaración de main con argumentos
  * numéricos
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   May 15, 2019

@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  13. Argumentos del main - 02. Declaración de main con argumentos (2)
+ * @brief  13. Argumentos del Main - 02. Declaración de main con argumentos (2)
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   May 15, 2019
  */
