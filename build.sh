@@ -13,7 +13,7 @@ find 08-Punteros -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" &&
 find 09-Funciones-Argumentos-por-Referencia -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 10-Arreglos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 11-Arreglos-Multidimensionales -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
-find 12-Memoria-Dinamica -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
-find 13-Strings -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
-find 14-Argumentos-del-main -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 12-Strings -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 13-Argumentos-del-main -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 14-Memoria-Dinamica -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 15-Recursividad -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
