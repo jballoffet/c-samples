@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/jballoffet/learning-c.svg?branch=master)](https://travis-ci.com/jballoffet/learning-c)
+[![Build Status](https://github.com/jballoffet/c-samples/actions/workflows/build.yml/badge.svg)](https://github.com/jballoffet/c-samples/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # C Samples
