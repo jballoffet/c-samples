@@ -9,7 +9,6 @@
 
 int main(void)
 {
-    // Declaro dos strings sin inicializar.
     char word1[20];
     char word2[20];
     int diff;

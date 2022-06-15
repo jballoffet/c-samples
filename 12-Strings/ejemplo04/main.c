@@ -9,7 +9,6 @@
 
 int main(void)
 {
-    // Declaro un string sin inicializar.
     char word[20];
     int length;
 
