@@ -19,3 +19,6 @@ find 14-Recursividad -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")
 find 15-Memoria-Dinamica -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 16-Algoritmos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 17-Estructuras -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 18-Uniones -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 19-Campos-de-Bits -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 20-Enumeraciones -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;

@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  19. Estructuras - 04. Operador flecha
+ * @brief  17. Estructuras - 04. Operador flecha
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Jul 23, 2022
  */

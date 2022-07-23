@@ -1,13 +1,13 @@
 /*!
  * @file   main.c
- * @brief  19. Estructuras - 01. Definición y declaración de estructuras
+ * @brief  17. Estructuras - 01. Definición y declaración de estructuras
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Aug 19, 2019
  */
 #include <stdio.h>
 #include <string.h>
 
-// Defino un tipo de datos llamado "struct Person".
+// Defino un tipo de datos estructura llamado "struct Person".
 struct Person
 {
     char first_name[20];
