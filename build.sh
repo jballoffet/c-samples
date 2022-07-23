@@ -18,3 +18,4 @@ find 13-Argumentos-del-Main -type f -name 'Makefile' -exec bash -c 'cd "$(dirnam
 find 14-Recursividad -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 15-Memoria-Dinamica -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 16-Algoritmos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 17-Estructuras -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
