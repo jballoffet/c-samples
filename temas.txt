@@ -1,9 +1,5 @@
 Contenidos:
-22. Colas
-23. Pilas
-24. Listas Simplemente Enlazadas
-25. Listas Doblemente Enlazadas
-26. Listas Circulares
+24. Listas Circulares
 27. Bibliotecas (estaticas, shared, dinamicas)
 28. Archivos de texto
 29. Archivos binarios

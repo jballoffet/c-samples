@@ -25,3 +25,6 @@ find 20-Campos-de-Bits -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}
 find 21-Enumeraciones -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 22-Estructuras-Autorreferenciadas -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 23-Vectores -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 24-Listas-Enlazadas -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 25-Pilas -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 26-Colas -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
