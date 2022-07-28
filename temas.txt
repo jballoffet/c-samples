@@ -1,25 +1,4 @@
 Contenidos:
-1. Introducción a C
-2. Variables y Tipos de Datos
-3. Operadores
-4. Estructuras de Control - Decisión
-5. Estructuras de Control - Repetición
-6. Funciones - Argumentos por valor
-7. Funciones - Archivos Header
-8. Punteros
-9. Funciones - Argumentos por referencia
-10. Arreglos
-11. Arreglos Multidimensionales
-12. Memoria dinámica (parte 1)
-13. Strings
-14. Argumentos del main
-15. Recursividad
-16. Algoritmos
-17. Instrucciones (directivas) del Pre-procesador y Typedef (#include, #define, typedef, enum, #ifdef, #ifndef, #endif)
-18. Punteros a función
-19. Estructuras
-20. Memoria dinámica (parte 2)
-21. Estructuras Autorreferenciadas
 22. Colas
 23. Pilas
 24. Listas Simplemente Enlazadas

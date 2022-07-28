@@ -1,24 +1,24 @@
 /*!
  * @file   main.c
- * @brief  17. Estructuras - 01. Definición y declaración de estructuras
+ * @brief  18. Estructuras - 02. Uso de Typedef
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Aug 19, 2019
  */
 #include <stdio.h>
 #include <string.h>
 
-// Defino un tipo de datos estructura llamado "struct Person".
-struct Person
+// Defino un tipo de datos llamado "Person" a partir del tipo "struct Person".
+typedef struct Person
 {
     char first_name[20];
     char last_name[20];
     int age;
-};
+} Person;
 
 int main(void)
 {
-    // Declaro una variable de tipo "struct Person".
-    struct Person person;
+    // Declaro una variable de tipo "Person".
+    Person person;
 
     // Cargo los datos de una persona.
     strcpy(person.first_name, "John");

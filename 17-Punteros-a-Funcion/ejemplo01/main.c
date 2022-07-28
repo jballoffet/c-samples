@@ -1,8 +1,8 @@
 /*!
  * @file   main.c
- * @brief  19. Campos de Bits - 01.
+ * @brief  17. Punteros a Función - 01.
  * @author Javier Balloffet <javier.balloffet@gmail.com>
- * @date   Jul 23, 2022
+ * @date   Jul 27, 2022
  */
 #include <stdio.h>
 

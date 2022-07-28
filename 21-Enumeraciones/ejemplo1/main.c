@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  20. Enumeraciones - 01. Definición y declaración de enumeraciones
+ * @brief  21. Enumeraciones - 01. Definición y declaración de enumeraciones
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Aug 19, 2019
  */

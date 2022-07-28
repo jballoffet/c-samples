@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  20. Enumeraciones - 02. Uso de Typedef
+ * @brief  21. Enumeraciones - 02. Uso de Typedef
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Aug 19, 2019
  */

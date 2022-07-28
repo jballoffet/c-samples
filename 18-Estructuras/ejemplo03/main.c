@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  17. Estructuras - 03. Arreglos de estructuras
+ * @brief  18. Estructuras - 03. Arreglos de estructuras
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Aug 19, 2019
  */
