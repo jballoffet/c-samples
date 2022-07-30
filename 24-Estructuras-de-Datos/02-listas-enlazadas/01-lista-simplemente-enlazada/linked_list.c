@@ -1,6 +1,7 @@
 /*!
  * @file   linked_list.c
- * @brief  24. Listas Enlazadas - 01. Lista Simplemente Enlazada
+ * @brief  24. Estructuras de Datos - 02. Listas Enlazadas - 01. Lista
+ *   Simplemente Enlazada
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Mar 16, 2019
  */

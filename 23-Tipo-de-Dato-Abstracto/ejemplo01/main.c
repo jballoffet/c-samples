@@ -1,6 +1,6 @@
 /*!
  * @file   main.c
- * @brief  24. Listas Enlazadas - 02. Lista Doblemente Enlazada
+ * @brief  23. Tipo de Dato Abstracto - 01.
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Jul 27, 2022
  */

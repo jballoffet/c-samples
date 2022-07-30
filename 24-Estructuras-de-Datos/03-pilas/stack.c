@@ -1,6 +1,6 @@
 /*!
  * @file   stack.c
- * @brief  25. Pilas - 01. Implementación de una pila usando una lista enlazada
+ * @brief  24. Estructuras de Datos - 03. Pilas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Mar 16, 2019
  */
