@@ -1,9 +1,4 @@
 Contenidos:
-30. Archivos utilizando systemcalls
-31. Procesos
-32. IPC - Pipes
-33. IPC - Named Pipes o FIFO
-34. IPC - Señales
 35. Sockets (servidor, cliente, tcp, udp)
 36. GUI (opencv, gtk, ncurses)
 37. Imagenes (opencv)
