@@ -26,3 +26,5 @@ find 21-Enumeraciones -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}"
 find 22-Estructuras-Autorreferenciadas -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 23-Tipo-de-Dato-Abstracto -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 24-Estructuras-de-Datos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 25-Archivos-de-Texto -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 26-Archivos-Binarios -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;

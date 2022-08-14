@@ -1,6 +1,4 @@
 Contenidos:
-28. Archivos de texto
-29. Archivos binarios
 30. Archivos utilizando systemcalls
 31. Procesos
 32. IPC - Pipes
