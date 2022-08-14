@@ -3,7 +3,6 @@ Contenidos:
 36. GUI (opencv, gtk, ncurses)
 37. Imagenes (opencv)
 38. Audio (alsa)
-39. Threads
 40. IPC - Semaforos
 41. IPC - Cola de Mensajes
 42. IPC - Shared Memory
