@@ -1,22 +1,22 @@
 /*!
  * @file   main.c
- * @brief  19. Uniones - 01. Definición y declaración de uniones
+ * @brief  19. Uniones - 02. Uso de Typedef
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Sep 16, 2022
  */
 #include <stdio.h>
 
-// Defino un tipo de datos union llamado "union Number".
-union Number
+// Defino un tipo de datos llamado "Number" a partir del tipo "union Number".
+typedef union Number
 {
     int x;
     int y;
-};
+} Number;
 
 int main(void)
 {
-    // Declaro una variable de tipo "union Number".
-    union Number number;
+    // Declaro una variable de tipo "Number".
+    Number number;
 
     // Asigno 2 al campo X.
     number.x = 2;
