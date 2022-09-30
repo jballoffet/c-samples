@@ -8,4 +8,5 @@ IndentWidth: 4
 DerivePointerAlignment: false
 PointerAlignment: Left
 BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: Empty
 ...
