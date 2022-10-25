@@ -1,51 +1,63 @@
-/**
- * \file            main.c
- * \brief           38. Audio - Ejemplo 2 - VLC - Reproducción de un archivo mp3
- * \author          Javier Balloffet
- * \date            Sep 1, 2019
- * \details         Usar makefile para compilar, linkear y ejecutar
+/*!
+ * @file   main.c
+ * @brief  38. Audio - 02. libVLC - Reproducción de un archivo mp3
+ * @author Javier Balloffet <javier.balloffet@gmail.com>
+ * @date   Sep 1, 2019
  */
-
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <vlc/vlc.h>
 
-int main()
+int main(void)
 {
-    libvlc_instance_t* instance = NULL;
-    libvlc_media_player_t* media_player = NULL;
-    libvlc_media_t* media = NULL;
+    libvlc_instance_t* motor = NULL;
+    libvlc_media_t* audio = NULL;
+    libvlc_media_player_t* reproductor = NULL;
 
-    /* 1. Cargo el engine de VLC */
-    instance = libvlc_new(0, NULL);
-    if (instance == NULL)
+    // Cargo el motor de libVLC.
+    motor = libvlc_new(0, NULL);
+    if (motor == NULL)
     {
-        fprintf(stderr, "Error!");
+        printf("Error al cargar el motor de libVLC\n");
         return 1;
     }
 
-    /* 2. Creo un nuevo item */
-    media = libvlc_media_new_path(instance, "sample.mp3");
+    // Cargo el archivo de audio.
+    audio = libvlc_media_new_path(motor, "sample.mp3");
+    if (audio == NULL)
+    {
+        printf("Error al cargar el archivo de audio\n");
+        return 1;
+    }
 
-    /* 3. Creo un entorno de reproducción de media play */
-    media_player = libvlc_media_player_new_from_media(media);
+    // Creo un reproductor de media para el archivo de audio.
+    reproductor = libvlc_media_player_new_from_media(audio);
+    if (reproductor == NULL)
+    {
+        printf("Error al crear el reproductor de media\n");
+        return 1;
+    }
 
-    // no need to keep the media now
-    libvlc_media_release(media);
+    // Libero el archivo de audio (ya no es necesario).
+    libvlc_media_release(audio);
 
-    // play the media_player
-    libvlc_media_player_play(media_player);
+    // Reproduzco el reproductor de media.
+    libvlc_media_player_play(reproductor);
 
-    sleep(10);
+    // Espero hasta que el archivo de audio termine de reproducirse.
+    do
+    {
+        sleep(1);
+    } while (libvlc_media_player_is_playing(reproductor));
 
-    // stop playing
-    libvlc_media_player_stop(media_player);
+    // Detengo el reproductor de media.
+    libvlc_media_player_stop(reproductor);
 
-    // free the media_player
-    libvlc_media_player_release(media_player);
+    // Libero el reproductor de media.
+    libvlc_media_player_release(reproductor);
 
-    libvlc_release(instance);
+    // Libero los recursos.
+    libvlc_release(motor);
 
     return 0;
 }
