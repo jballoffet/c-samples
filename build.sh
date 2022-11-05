@@ -32,3 +32,4 @@ find 27-System-calls-de-Entrada-y-Salida -type f -name 'Makefile' -exec bash -c 
 find 28-Procesos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 29-Comunicacion-entre-Procesos -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 30-Threads -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+find 31-Sockets -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;

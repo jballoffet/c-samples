@@ -1,12 +1,9 @@
 Contenidos:
-35. Sockets (servidor, cliente, tcp, udp)
+29. IPC - Semaforos
+29. IPC - Cola de Mensajes
+29. IPC - Shared Memory
+31. Sockets (udp)
 36. GUI (opencv, gtk, ncurses)
-37. Imagenes (opencv)
-38. Audio (alsa)
-40. IPC - Semaforos
-41. IPC - Cola de Mensajes
-42. IPC - Shared Memory
-43. Puertos
 44. Bibliotecas (estaticas, shared, dinamicas)
 
 Herramientas:
