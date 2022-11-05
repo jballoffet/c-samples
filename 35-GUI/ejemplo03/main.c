@@ -1,19 +1,18 @@
-/**
- * \file            main.c
- * \brief           41. GUI - Ejemplo 4 - GTK - Crear container (box)
- * \author          Javier Balloffet
- * \date            Sep 1, 2019
- * \details         Usar makefile para compilar, linkear y ejecutar
+/*!
+ * @file   main.c
+ * @brief  35. GUI - 03. GTK - Crear button
+ * @author Javier Balloffet <javier.balloffet@gmail.com>
+ * @date   Sep 1, 2019
  */
-
 #include <gtk/gtk.h>
 
-/* 1. Creo un label con el texto "Hola Mundo!" */
+// Creo un label con el texto "Hola Mundo!".
 GtkWidget* label_count;
 
 void on_button_clicked();
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
     GtkWidget* window;
     GtkWidget* box;
 
@@ -22,7 +21,7 @@ int main(int argc, char* argv[]) {
 
     gtk_init(&argc, &argv);
 
-    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);  
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Ejemplo");
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_window_set_default_size(GTK_WINDOW(window), 250, 200);
@@ -38,7 +37,7 @@ int main(int argc, char* argv[]) {
     gtk_container_add(GTK_CONTAINER(box), label_count);
 
     button = gtk_button_new_with_label("QUIT");
-    gtk_container_add(GTK_CONTAINER(box), button);  
+    gtk_container_add(GTK_CONTAINER(box), button);
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), NULL);
 
     gtk_widget_show_all(window);
@@ -47,8 +46,9 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-/* 1. Función llamada cuando el botón es presionado (callback) */
-void on_button_clicked() {
+// Función llamada cuando el botón es presionado (callback).
+void on_button_clicked()
+{
     static unsigned int count = 0;
     char count_string[30] = {0};
     count++;

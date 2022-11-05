@@ -36,3 +36,4 @@ find 31-Sockets -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && 
 # find 32-Audio -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 # find 33-Imagenes -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 # find 34-Video -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+# find 35-GUI -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
