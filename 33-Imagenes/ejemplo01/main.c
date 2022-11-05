@@ -1,15 +1,13 @@
-/**
- * \file            main.c
- * \brief           39. Imágenes - Ejemplo 1 - OpenCV - Abrir imagen
- * \author          Javier Balloffet
- * \date            Aug 24, 2019
- * \details         Usar makefile para compilar, linkear y ejecutar
+/*!
+ * @file   main.c
+ * @brief  31. Imágenes - 01. OpenCV - Abrir imagen
+ * @author Javier Balloffet <javier.balloffet@gmail.com>
+ * @date   Aug 24, 2019
  */
-
 #include <cv.h>
 #include <highgui.h>
 
-int main()
+int main(void)
 {
     // Declaro descriptores para las imágenes.
     IplImage* img1 = NULL;

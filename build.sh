@@ -34,3 +34,4 @@ find 29-Comunicacion-entre-Procesos -type f -name 'Makefile' -exec bash -c 'cd "
 find 30-Threads -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 find 31-Sockets -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
 # find 32-Audio -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
+# find 33-Imagenes -type f -name 'Makefile' -exec bash -c 'cd "$(dirname "{}")" && make' \;
