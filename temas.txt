@@ -3,8 +3,8 @@ Contenidos:
 29. IPC - Cola de Mensajes
 29. IPC - Shared Memory
 31. Sockets (udp)
-36. GUI (opencv, gtk, ncurses)
-44. Bibliotecas (estaticas, shared, dinamicas)
+35. GUI (opencv, ncurses)
+37. Bibliotecas (estaticas, shared, dinamicas)
 
 Herramientas:
 1. Linux
