@@ -8,6 +8,7 @@ EXEC    = app
 
 CC      = gcc
 CFLAGS  = -c -Wall
+LDFLAGS = -lpthread
 
 .PHONY: all clean help
 
@@ -15,7 +16,7 @@ CFLAGS  = -c -Wall
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $@
+	$(CC) $(OBJS) $(LDFLAGS) -o $@
 
 %.o: %.c Makefile
 	$(CC) $(CFLAGS) $< -o $@
