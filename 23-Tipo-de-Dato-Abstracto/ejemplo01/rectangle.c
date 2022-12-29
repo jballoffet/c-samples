@@ -1,6 +1,7 @@
 /*!
  * @file   rectangle.c
  * @brief  23. Tipo de Dato Abstracto - 01. Definición y declaración de un TDA
+ *   (Rectangle)
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Dic 29, 2022
  */
