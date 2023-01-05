@@ -1,6 +1,7 @@
 /*!
  * @file   main.c
- * @brief  24. Estructuras de Datos - 04. Colas
+ * @brief  24. Estructuras de Datos - 04. Colas - 02. Cola usando listas
+ *   enlazadas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Mar 16, 2019
  */

@@ -1,6 +1,7 @@
 /*!
  * @file   stack.h
- * @brief  24. Estructuras de Datos - 03. Pilas
+ * @brief  24. Estructuras de Datos - 03. Pilas - 02. Pila usando listas
+ *   enlazadas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
  * @date   Mar 16, 2019
  */
