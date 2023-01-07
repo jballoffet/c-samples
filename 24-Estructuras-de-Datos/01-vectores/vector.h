@@ -33,7 +33,7 @@ Vector* vector_create();
 Status vector_add(Vector* vector, Element element);
 
 // @brief Quita el elemento presente en la posición indicada.
-Status vector_remove(Vector* vector, int position);
+Status vector_remove(Vector* vector, int position, Element* element);
 
 // @brief Devuelve el valor del elemento presente en la posición indicada.
 Status vector_get(const Vector* vector, int position, Element* element);
