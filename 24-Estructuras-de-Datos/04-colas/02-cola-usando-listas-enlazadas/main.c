@@ -3,7 +3,7 @@
  * @brief  24. Estructuras de Datos - 04. Colas - 02. Cola usando listas
  *   enlazadas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
- * @date   Mar 16, 2019
+ * @date   Jan 8, 2023
  */
 #include <stdio.h>
 
@@ -11,68 +11,65 @@
 
 int main(void)
 {
-    // Declaro una Cola (Queue). La misma es un puntero al primer nodo.
-    QueueNode* queue = NULL;
-    int i, value;
+    Queue* queue = NULL;
+    Element element;
+    int i;
+
+    // Creo una cola como un tipo de dato abstracto.
+    queue = queue_create();
+    if (queue == NULL)
+    {
+        printf("Error! Cola no creada.\n");
+        return -1;
+    }
 
     // Encolo los números del 1 al 5.
     for (i = 1; i <= 5; i++)
     {
-        if (enqueue(&queue, i) != QS_SUCCESS)
+        element.data = i;
+        if (queue_enqueue(queue, element) != SUCCESS)
         {
             printf("Error! Memoria no asignada.\n");
             return -1;
         }
-        print_queue(queue);
+        queue_print(queue);
     }
 
     // Desencolo un nodo.
-    if (dequeue(&queue, &value) == QS_SUCCESS)
+    if (queue_dequeue(queue, &element) == SUCCESS)
     {
-        printf("Valor obtenido (desencolado): %d\n", value);
+        printf("Valor obtenido (desencolado): %d\n", element.data);
     }
     else
     {
         printf("Error! La cola esta vacia.\n");
     }
-    print_queue(queue);
+    queue_print(queue);
 
     // Observo el valor del próximo nodo a desencolar (sin desencolarlo).
-    if (peek(queue, &value) == QS_SUCCESS)
+    if (queue_peek(queue, &element) == SUCCESS)
     {
-        printf("Valor obtenido (sin desencolar): %d\n", value);
+        printf("Valor obtenido (sin desencolar): %d\n", element.data);
     }
     else
     {
         printf("Error! La cola esta vacia.\n");
     }
-    print_queue(queue);
+    queue_print(queue);
 
     // Desencolo un nodo.
-    if (dequeue(&queue, &value) == QS_SUCCESS)
+    if (queue_dequeue(queue, &element) == SUCCESS)
     {
-        printf("Valor obtenido (desencolado): %d\n", value);
+        printf("Valor obtenido (desencolado): %d\n", element.data);
     }
     else
     {
         printf("Error! La cola esta vacia.\n");
     }
-    print_queue(queue);
+    queue_print(queue);
 
-    // Libero la memoria de la cola completa.
-    free_queue(&queue);
-    print_queue(queue);
-
-    // Intento desencolar de una cola vacía.
-    if (dequeue(&queue, &value) == QS_SUCCESS)
-    {
-        printf("Valor obtenido (desencolado): %d\n", value);
-    }
-    else
-    {
-        printf("Error! La cola esta vacia.\n");
-    }
-    print_queue(queue);
+    // Destruyo la cola.
+    queue_destroy(queue);
 
     return 0;
 }

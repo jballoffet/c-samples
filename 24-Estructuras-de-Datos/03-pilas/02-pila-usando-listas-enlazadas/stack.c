@@ -3,105 +3,93 @@
  * @brief  24. Estructuras de Datos - 03. Pilas - 02. Pila usando listas
  *   enlazadas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
- * @date   Mar 16, 2019
+ * @date   Jan 8, 2023
  */
 #include "stack.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-StackStatus push(StackNode** stack, int value)
+Stack* stack_create()
 {
-    // Declaro un puntero a StackNode (StackNode*) para almacenar la direccion
-    // de comienzo de la pila.
-    StackNode* head = *stack;
-    // Declaro un puntero a StackNode (StackNode*) para almacenar la direccion
-    // del nuevo nodo.
-    StackNode* new_node = NULL;
+    Stack* stack = NULL;
 
-    // Solicito memoria al SO equivalente a un nodo (StackNode).
-    new_node = (StackNode*)malloc(sizeof(StackNode));
-    if (new_node == NULL)
+    // Solicito memoria para almacenar los datos de la pila.
+    stack = (Stack*)malloc(sizeof(Stack));
+    if (stack != NULL)
     {
-        return SS_MEMORY_ERROR;
+        stack->head = NULL;
     }
 
-    // Cargo el nuevo valor en el nodo. Asigno un valor nulo al puntero por
-    // ahora.
-    new_node->value = value;
-    new_node->next = NULL;
-
-    // Se pushea el nuevo nodo. Se pushea y popea al principio, para tener la
-    // menor demora.
-    *stack = new_node;
-    new_node->next = head;
-
-    return SS_SUCCESS;
+    return stack;
 }
 
-StackStatus pop(StackNode** stack, int* value)
+Status stack_push(Stack* stack, Element element)
 {
-    // Declaro un puntero a StackNode (StackNode*) para almacenar la direccion
-    // de comienzo de la pila.
-    StackNode* head = *stack;
+    Node* head = stack->head;
+    Node* node = NULL;
+
+    // Solicito memoria para el nuevo nodo.
+    node = (Node*)malloc(sizeof(Node));
+    if (node == NULL)
+    {
+        return ERROR_MEMORY_FAILURE;
+    }
+
+    // Inicializo el nuevo nodo.
+    node->element = element;
+    node->next = NULL;
+
+    // Hago que el nuevo nodo apunte al principio de la pila.
+    node->next = head;
+
+    // Actualizo la dirección de comienzo de la pila.
+    stack->head = node;
+
+    return SUCCESS;
+}
+
+Status stack_pop(Stack* stack, Element* element)
+{
+    Node* head = stack->head;
 
     // Chequeo si la pila está vacía.
     if (head == NULL)
     {
-        return SS_EMPTY_STACK;
+        return ERROR_EMPTY_STACK;
     }
 
-    // Se popea un nodo. Se popea del principio para demorar lo menos posible.
-    // Obtengo el valor almacenado en el nodo.
-    *value = head->value;
+    // Retorno por referencia el valor almacenado en el nodo.
+    *element = head->element;
 
-    // Modifico la dirección de comienzo de la pila a la del próximo nodo.
-    *stack = head->next;
+    // Modifico la dirección de comienzo de la lista a la del próximo nodo.
+    stack->head = head->next;
 
-    // Libero la memoria solicitada al SO para el nodo que se está popeando.
+    // Libero la memoria correspondiente al nodo siendo removido.
     free(head);
 
-    return SS_SUCCESS;
+    return SUCCESS;
 }
 
-StackStatus peek(StackNode* stack, int* value)
+Status stack_peek(Stack* stack, Element* element)
 {
-    // Declaro un puntero a StackNode (StackNode*) para almacenar la direccion
-    // de comienzo de la pila.
-    StackNode* head = stack;
+    Node* head = stack->head;
 
     // Chequeo si la pila está vacía.
     if (head == NULL)
     {
-        return SS_EMPTY_STACK;
+        return ERROR_EMPTY_STACK;
     }
 
-    // Obtengo el valor almacenado en el nodo.
-    *value = head->value;
+    // Retorno por referencia el valor almacenado en el nodo.
+    *element = head->element;
 
-    return SS_SUCCESS;
+    return SUCCESS;
 }
 
-void free_stack(StackNode** stack)
+void stack_print(Stack* stack)
 {
-    // Declaro un puntero a StackNode (StackNode*) para almacenar la direccion
-    // de comienzo de la pila.
-    StackNode* head = *stack;
-
-    // Libero la memoria solicitada al SO nodo a nodo hasta vaciar la pila.
-    while (head != NULL)
-    {
-        *stack = head->next;
-        free(head);
-        head = *stack;
-    }
-}
-
-void print_stack(StackNode* stack)
-{
-    // Declaro un puntero a StackNode (StackNode*) para almacenar la direccion
-    // de comienzo de la pila.
-    StackNode* head = stack;
+    Node* head = stack->head;
 
     // Imprimo el contenido de la pila nodo a nodo.
     printf("Contenido de la pila: ");
@@ -109,9 +97,24 @@ void print_stack(StackNode* stack)
 
     while (head != NULL)
     {
-        printf("%d --> ", head->value);
+        printf("%d --> ", head->element.data);
         head = head->next;
     }
 
     printf("NULL\n");
+}
+
+void stack_destroy(Stack* stack)
+{
+    Node* head = stack->head;
+
+    // Libero la memoria solicitada nodo a nodo hasta vaciar la lista.
+    while (head != NULL)
+    {
+        stack->head = head->next;
+        free(head);
+        head = stack->head;
+    }
+
+    free(stack);
 }

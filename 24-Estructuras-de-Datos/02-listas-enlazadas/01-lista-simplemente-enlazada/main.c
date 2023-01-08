@@ -19,7 +19,7 @@ int main(void)
     linked_list = linked_list_create();
     if (linked_list == NULL)
     {
-        printf("Error! Lista Enlazada no creado.\n");
+        printf("Error! Lista Enlazada no creada.\n");
         return -1;
     }
 

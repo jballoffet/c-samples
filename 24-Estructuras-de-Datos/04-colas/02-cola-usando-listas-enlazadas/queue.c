@@ -3,121 +3,105 @@
  * @brief  24. Estructuras de Datos - 04. Colas - 02. Cola usando listas
  *   enlazadas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
- * @date   Mar 16, 2019
+ * @date   Jan 8, 2023
  */
 #include "queue.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-QueueStatus enqueue(QueueNode** queue, int value)
+Queue* queue_create()
 {
-    // Declaro un puntero a QueueNode (QueueNode*) para almacenar la direccion
-    // de comienzo de la cola.
-    QueueNode* head = *queue;
-    // Declaro un puntero a QueueNode (QueueNode*) para almacenar la direccion
-    // del nuevo nodo.
-    QueueNode* new_node = NULL;
+    Queue* queue = NULL;
 
-    // Solicito memoria al SO equivalente a un nodo (QueueNode).
-    new_node = (QueueNode*)malloc(sizeof(QueueNode));
-    if (new_node == NULL)
+    // Solicito memoria para almacenar los datos de la cola.
+    queue = (Queue*)malloc(sizeof(Queue));
+    if (queue != NULL)
     {
-        return QS_MEMORY_ERROR;
+        queue->head = NULL;
     }
 
-    // Cargo el nuevo valor en el nodo. Asigno un valor nulo al puntero por
-    // ahora.
-    new_node->value = value;
-    new_node->next = NULL;
-
-    // Se encola el nuevo nodo. Se encola al final, para que la menor demora sea
-    // al desencolar.
-    // Chequeo si la cola esta vacía.
-    if (head == NULL)
-    {
-        // ¡La cola está vacía! Agrego el nuevo nodo.
-        *queue = new_node;
-    }
-    else
-    {
-        // ¡La cola no está vacía! La recorro hasta encontrar el final.
-        while (head->next != NULL)
-        {
-            head = head->next;
-        }
-
-        // Encontré el último nodo. Lo hago apuntar al nuevo nodo.
-        head->next = new_node;
-    }
-
-    return QS_SUCCESS;
+    return queue;
 }
 
-QueueStatus dequeue(QueueNode** queue, int* value)
+Status queue_enqueue(Queue* queue, Element element)
 {
-    // Declaro un puntero a QueueNode (QueueNode*) para almacenar la direccion
-    // de comienzo de la cola.
-    QueueNode* head = *queue;
+    Node* head = queue->head;
+    Node* node = NULL;
 
-    // Chequeo si la cola esta vacía.
-    if (head == NULL)
+    // Solicito memoria para el nuevo nodo.
+    node = (Node*)malloc(sizeof(Node));
+    if (node == NULL)
     {
-        return QS_EMPTY_QUEUE;
+        return ERROR_MEMORY_FAILURE;
     }
 
-    // Se desencola un nodo. Se desencola del principio para demorar lo menos
-    // posible.
-    // Obtengo el valor almacenado en el nodo.
-    *value = head->value;
+    // Inicializo el nuevo nodo.
+    node->element = element;
+    node->next = NULL;
+
+    // Si la cola está vacía, simplemente inserto el nuevo nodo.
+    if (head == NULL)
+    {
+        // Actualizo la dirección de comienzo de la cola.
+        queue->head = node;
+
+        return SUCCESS;
+    }
+
+    // Recorro la cola hasta llegar al último nodo.
+    while (head->next != NULL)
+    {
+        head = head->next;
+    }
+
+    // Encontré el último nodo, lo hago apuntar al nuevo nodo.
+    head->next = node;
+
+    return SUCCESS;
+}
+
+Status queue_dequeue(Queue* queue, Element* element)
+{
+    Node* head = queue->head;
+
+    // Chequeo si la cola está vacía.
+    if (head == NULL)
+    {
+        return ERROR_MEMORY_FAILURE;
+    }
+
+    // Retorno por referencia el valor almacenado en el nodo.
+    *element = head->element;
 
     // Modifico la dirección de comienzo de la cola a la del próximo nodo.
-    *queue = head->next;
+    queue->head = head->next;
 
-    // Libero la memoria solicitada al SO para el nodo que se está desencolando.
+    // Libero la memoria correspondiente al nodo siendo removido.
     free(head);
 
-    return QS_SUCCESS;
+    return SUCCESS;
 }
 
-QueueStatus peek(QueueNode* queue, int* value)
+Status queue_peek(Queue* queue, Element* element)
 {
-    // Declaro un puntero a QueueNode (QueueNode*) para almacenar la direccion
-    // de comienzo de la cola.
-    QueueNode* head = queue;
+    Node* head = queue->head;
 
-    // Chequeo si la cola esta vacía.
+    // Chequeo si la cola está vacía.
     if (head == NULL)
     {
-        return QS_EMPTY_QUEUE;
+        return ERROR_MEMORY_FAILURE;
     }
 
-    // Obtengo el valor almacenado en el nodo.
-    *value = head->value;
+    // Retorno por referencia el valor almacenado en el nodo.
+    *element = head->element;
 
-    return QS_SUCCESS;
+    return SUCCESS;
 }
 
-void free_queue(QueueNode** queue)
+void queue_print(Queue* queue)
 {
-    // Declaro un puntero a QueueNode (QueueNode*) para almacenar la direccion
-    // de comienzo de la cola.
-    QueueNode* head = *queue;
-
-    // Libero la memoria solicitada al SO nodo a nodo hasta vaciar la cola.
-    while (head != NULL)
-    {
-        *queue = head->next;
-        free(head);
-        head = *queue;
-    }
-}
-
-void print_queue(QueueNode* queue)
-{
-    // Declaro un puntero a QueueNode (QueueNode*) para almacenar la direccion
-    // de comienzo de la cola.
-    QueueNode* head = queue;
+    Node* head = queue->head;
 
     // Imprimo el contenido de la cola nodo a nodo.
     printf("Contenido de la cola: ");
@@ -125,9 +109,24 @@ void print_queue(QueueNode* queue)
 
     while (head != NULL)
     {
-        printf("%d --> ", head->value);
+        printf("%d --> ", head->element.data);
         head = head->next;
     }
 
     printf("NULL\n");
+}
+
+void queue_destroy(Queue* queue)
+{
+    Node* head = queue->head;
+
+    // Libero la memoria solicitada nodo a nodo hasta vaciar la cola.
+    while (head != NULL)
+    {
+        queue->head = head->next;
+        free(head);
+        head = queue->head;
+    }
+
+    free(queue);
 }

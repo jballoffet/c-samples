@@ -3,7 +3,7 @@
  * @brief  24. Estructuras de Datos - 03. Pilas - 02. Pila usando listas
  *   enlazadas
  * @author Javier Balloffet <javier.balloffet@gmail.com>
- * @date   Mar 16, 2019
+ * @date   Jan 8, 2023
  */
 #include <stdio.h>
 
@@ -11,68 +11,65 @@
 
 int main(void)
 {
-    // Declaro una Pila (Stack). La misma es un puntero al primer nodo.
-    StackNode* stack = NULL;
-    int i, value;
+    Stack* stack = NULL;
+    Element element;
+    int i;
+
+    // Creo una pila como un tipo de dato abstracto.
+    stack = stack_create();
+    if (stack == NULL)
+    {
+        printf("Error! Pila no creada.\n");
+        return -1;
+    }
 
     // Pusheo los números del 1 al 5.
     for (i = 1; i <= 5; i++)
     {
-        if (push(&stack, i) != SS_SUCCESS)
+        element.data = i;
+        if (stack_push(stack, element) != SUCCESS)
         {
             printf("Error! Memoria no asignada.\n");
             return -1;
         }
-        print_stack(stack);
+        stack_print(stack);
     }
 
     // Popeo un nodo.
-    if (pop(&stack, &value) == SS_SUCCESS)
+    if (stack_pop(stack, &element) == SUCCESS)
     {
-        printf("Valor obtenido (popeado): %d\n", value);
+        printf("Valor obtenido (popeado): %d\n", element.data);
     }
     else
     {
         printf("Error! La pila esta vacia.\n");
     }
-    print_stack(stack);
+    stack_print(stack);
 
     // Observo el valor del próximo nodo a popear (sin popearlo).
-    if (peek(stack, &value) == SS_SUCCESS)
+    if (stack_peek(stack, &element) == SUCCESS)
     {
-        printf("Valor obtenido (sin popear): %d\n", value);
+        printf("Valor obtenido (sin popear): %d\n", element.data);
     }
     else
     {
         printf("Error! La pila esta vacia.\n");
     }
-    print_stack(stack);
+    stack_print(stack);
 
     // Popeo un nodo.
-    if (pop(&stack, &value) == SS_SUCCESS)
+    if (stack_pop(stack, &element) == SUCCESS)
     {
-        printf("Valor obtenido (popeado): %d\n", value);
+        printf("Valor obtenido (popeado): %d\n", element.data);
     }
     else
     {
         printf("Error! La pila esta vacia.\n");
     }
-    print_stack(stack);
+    stack_print(stack);
 
-    // Libero la memoria de la pila completa.
-    free_stack(&stack);
-    print_stack(stack);
-
-    // Intento popear de una pila vacía.
-    if (pop(&stack, &value) == SS_SUCCESS)
-    {
-        printf("Valor obtenido (popeado): %d\n", value);
-    }
-    else
-    {
-        printf("Error! La pila esta vacia.\n");
-    }
-    print_stack(stack);
+    // Destruyo la pila.
+    stack_destroy(stack);
 
     return 0;
 }

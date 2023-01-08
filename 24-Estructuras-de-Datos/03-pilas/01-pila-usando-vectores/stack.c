@@ -2,7 +2,7 @@
  * @file   stack.c
  * @brief  24. Estructuras de Datos - 03. Pilas - 01. Pila usando vectores
  * @author Javier Balloffet <javier.balloffet@gmail.com>
- * @date   Jan 4, 2023
+ * @date   Jan 8, 2023
  */
 #include "stack.h"
 
@@ -14,21 +14,21 @@ Stack* stack_create()
     return stack;
 }
 
-Status stack_push(Stack* pila, Element element)
+Status stack_push(Stack* stack, Element element)
 {
     return SUCCESS;
 }
 
-Status stack_pop(Stack* pila, Element* element)
+Status stack_pop(Stack* stack, Element* element)
 {
     return SUCCESS;
 }
 
-Status stack_peek(Stack* pila, Element* element)
+Status stack_peek(Stack* stack, Element* element)
 {
     return SUCCESS;
 }
 
-void stack_print(Stack* pila) {}
+void stack_print(Stack* stack) {}
 
-void stack_destroy(Stack* pila) {}
+void stack_destroy(Stack* stack) {}
