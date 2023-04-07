@@ -1,9 +1,9 @@
-[![Build Status](https://github.com/jballoffet/c-samples/actions/workflows/build.yml/badge.svg)](https://github.com/jballoffet/c-samples/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/jballoffet/c-samples/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/jballoffet/c-samples/actions/workflows/c-cpp.yml)
+[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # C Samples
 
-This repository acts as support material for the students of Introduction to CS at National Technological University.
+This repository contains c code samples for Introduction to Computer Science at National Technological University - Buenos Aires.
 
 ## Getting Started
 
@@ -29,14 +29,14 @@ install them before proceeding.
 You can get the source by "git clone" this git repository.
 
 ```shell
-  git clone https://github.com/jballoffet/learning-c.git
+  git clone https://github.com/jballoffet/c-samples.git
 ```
 
 To build all sample applications execute the following:
 
 ```shell
-  cd learning-c
-  bash ci/build_app.sh
+  cd c-samples
+  bash build.sh
 ```
 
 ### Running
@@ -51,11 +51,7 @@ To run the sample application execute the following:
 
 Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-See also the list of [contributors](https://github.com/jballoffet/learning-c/contributors) who participated in this project.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jballoffet/learning-c/tags).
+See also the list of [contributors](https://github.com/jballoffet/c-samples/contributors) who participated in this project.
 
 ## Authors
 
@@ -67,4 +63,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
+This project is licensed under the GPLv3 License. See the [LICENSE](/LICENSE) file for details.
