@@ -3,7 +3,7 @@
 
 # C Samples
 
-This repository contains c code samples for Introduction to Computer Science at National Technological University - Buenos Aires.
+This repository contains C code samples for Introduction to Computer Science at National Technological University - Buenos Aires.
 
 ## Getting Started
 
