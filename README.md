@@ -10,52 +10,33 @@ This repository contains C code samples for Introduction to Computer Science at 
 ### Prerequisites
 
 To build the sample project from source, the following tools are needed:
-
- * git
- * make
  * gcc
+ * make
 
-On Ubuntu/Debian, you can install them with:
+On Ubuntu/Debian, you can install them by running the following command:
 
 ```shell
-  sudo apt-get install git build-essential
+sudo apt-get install build-essential
 ```
 
-On other platforms, please use the corresponding package managing tool to
-install them before proceeding.
+On other platforms, please use the corresponding package manager to install them before proceeding.
 
 ### Building
 
-You can get the source by "git clone" this git repository.
+To build all the sample applications execute the following:
 
 ```shell
-  git clone https://github.com/jballoffet/c-samples.git
-```
-
-To build all sample applications execute the following:
-
-```shell
-  cd c-samples
-  bash build.sh
+cd c-samples
+bash build.sh
 ```
 
 ### Running
 
-To run the sample application execute the following:
+To run a certain sample application execute the following:
 
 ```shell
-  ./app.out
+./app
 ```
-
-## Contributing
-
-Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-See also the list of [contributors](https://github.com/jballoffet/c-samples/contributors) who participated in this project.
-
-## Authors
-
- * [Javier Balloffet](https://github.com/jballoffet) ([National Technological University - Buenos Aires](https://www.frba.utn.edu.ar/en/))
 
 ## Maintainers
 
